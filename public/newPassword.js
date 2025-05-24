@@ -3,7 +3,7 @@ const token = params.get('u')
 
 async function fetchData(newPassword){
     
-    const req = await fetch("http://localhost:3004/api/v1/users/newPw",{
+    const req = await fetch("http://creatortube-production.up.railway.app/api/v1/users/newPw",{
         method: "POST",
         headers : {
             "Content-Type" : "application/json"

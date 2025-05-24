@@ -14,7 +14,7 @@ window.onload = async () => {
     }
 
     try{
-        const req = await fetch("http://localhost:3004/api/v1/users/dashboard",{
+        const req = await fetch("http://creatortube-production.up.railway.app/api/v1/users/dashboard",{
             method:"POST",
             headers: {
                 "Content-Type" : "application/json"

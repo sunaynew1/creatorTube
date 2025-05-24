@@ -45,7 +45,7 @@ document.getElementById("btn-upload").addEventListener("click", async () => {
     formData.append("thumbnail", thumbnail);
     const xhr = new XMLHttpRequest();
 
-    // xhr.open("POST", "http://localhost:3004/api/v1/users/upload-video");
+    // xhr.open("POST", "http://creatortube-production.up.railway.app/api/v1/users/upload-video");
   
     // // Include cookies
     // xhr.withCredentials = true;
@@ -76,7 +76,7 @@ document.getElementById("btn-upload").addEventListener("click", async () => {
   
     try {
       showNotification("Video started uploading 🚀🚀");
-      const req = await fetch("http://localhost:3004/api/v1/users/upload-video", {
+      const req = await fetch("http://creatortube-production.up.railway.app/api/v1/users/upload-video", {
         method: "POST",
         body: formData,
         credentials: "include" // to include cookies

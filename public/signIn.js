@@ -51,7 +51,7 @@ const coverImage = document.getElementById("coverUpload").files[0];
     formData.append("avatar", avatar);
     formData.append("coverImage", coverImage);
     try{
-        const req = await fetch("http://localhost:3004/api/v1/users/register",{
+        const req = await fetch("http://creatortube-production.up.railway.app/api/v1/users/register",{
             method:"POST",
             body: formData
         })

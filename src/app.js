@@ -19,7 +19,7 @@ const app = express()
 
 app.use(
     cors({
-        origin:["http://127.0.0.1:3004", "http://localhost:3004"],
+        origin:["http://127.0.0.1:3004", "http://localhost:3004","https://creatortube-production.up.railway.app"],
         credentials: true 
     })
 )

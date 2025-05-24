@@ -40,7 +40,7 @@ const password=document.getElementById("password").value
     console.log(`email: ${email} username : ${username}  password : ${password}`)
     
     try{
-        const req = await fetch("http://localhost:3004/api/v1/users/login",{
+        const req = await fetch("http://creatortube-production.up.railway.app/api/v1/users/login",{
             method:"POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -76,7 +76,7 @@ const password=document.getElementById("password").value
 //     }
 // });
     
-//     fetch("http://localhost:3004/api/v1/users/logout", {
+//     fetch("http://creatortube-production.up.railway.app/api/v1/users/logout", {
 //         method: "POST",
 //         headers: {
 //             "Content-Type": "application/json",
