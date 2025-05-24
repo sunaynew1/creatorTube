@@ -107,10 +107,10 @@ const loginUser = asyncHandler(async (req, res) => {
     await loggedInUser.save({ validateBeforeSave: false })
     const options = {
         httpOnly: true,
-        secure: true,    // true in production (only on HTTPS)
-        sameSite: "lax",
-        path: "/",
-        maxAge: 24 * 60 * 60 * 1000
+  secure: process.env.NODE_ENV === "production", // true in prod (HTTPS only)
+  sameSite: "none",   // must be 'none' for cross-site cookies
+  path: "/",
+  maxAge: 24 * 60 * 60 * 1000,
     };
     //  document.cookie= accessToken
     //  document.cookie=refreshToken
@@ -195,17 +195,19 @@ const logoutUser = asyncHandler(async (req, res, next) => {
     return res
         .status(200)
         .clearCookie("accessToken", {
-                  httpOnly: true,
-        secure: true,    // true in production (only on HTTPS)
-        sameSite: "lax",
-        path: "/"
+                   httpOnly: true,
+  secure: process.env.NODE_ENV === "production", // true in prod (HTTPS only)
+  sameSite: "none",   // must be 'none' for cross-site cookies
+  path: "/",
+
      
         })
         .clearCookie("refreshToken", {
-                httpOnly: true,
-        secure: true,    // true in production (only on HTTPS)
-        sameSite: "lax",
-        path: "/"
+         httpOnly: true,
+  secure: process.env.NODE_ENV === "production", // true in prod (HTTPS only)
+  sameSite: "none",   // must be 'none' for cross-site cookies
+  path: "/",
+
       
         })
         .json(new ApiResponse(200, {}, "User logged out successfully"));
