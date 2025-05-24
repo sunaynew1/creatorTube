@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Video</title>
+  <link rel="stylesheet" href="./output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body
+  class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-black to-[#1a0c2c] min-h-screen text-white p-6">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 pt-[100px] bg-zinc-900/10 border-r border-zinc-800 p-6 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-xl">
+  
+    <nav class="space-y-5  text-sm text-zinc-300 font-medium">
+      <a href="dashboard.html" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="home"></i> Home</a>
+      <a href="content.html" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="video"></i> Content</a>
+      <a type="button" id="mychannel" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="home"></i> My Channel Page</a>
+      <a href="watchHistory.html" class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i data-lucide="history"></i> Watch History</a>
+      <a href="uploadFile.html" class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 rounded-lg p-4"><i data-lucide="upload"></i> Uploads</a>
+      <a href="manageVideo.html" class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i data-lucide="file-video"></i> Manage Videos</a>
+    </nav>
+
+    <div class=" absolute bottom-6 left-6" >
+      <div class=" flex items-center gap-4 hover:bg-white/10 p-4 rounded-lg" id="profilediv">
+      <img id="profile" class="w-10 h-10 rounded-full" alt="Profile" />
+      <div>
+        <p class="text-sm font-semibold" id="username">John Doe</p>
+        
+      </div>
+      </div>
+      <div class="flex items-center gap-4 hover:bg-white/10 p-4 rounded-lg hover:cursor-pointer" id="logout">
+        <i data-lucide="power" class="flex"></i>
+      <a class="text-xs text-center text-purple-400 p-1 " >Log out</a>
+      </div>
+    </div>
+    </div>
+  </aside>
+
+  <!-- Sidebar Toggle Button -->
+  <button id="sidebarToggle" class="fixed top-9 left-10 z-50 p-2 rounded-lg bg-zinc-800 border border-zinc-600 text-white hover:bg-zinc-700">
+    <i data-lucide="menu" class="w-5 h-5"></i>
+  </button>
+  <!-- Navbar -->
+   <div class="flex w-full justify-center ">
+  <nav class="fixed top-5 mr-[20px] rounded-full w-[80%] bg-white/10 backdrop-blur-lg shadow-xl px-6 py-4 flex justify-between items-center z-30">
+    <div class="text-2xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
+      <i data-lucide="upload-cloud" class="w-6 h-6 text-pink-400"></i> CreatorHub
+    </div>
+    <div class="hidden md:flex gap-8 text-sm text-gray-300 font-medium">
+     <a href="dashboard.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i data-lucide="home"></i> Home</a>
+      <a href="uploadFile.html" class="flex items-center gap-2 text-pink-400"><i data-lucide="upload"></i> Upload</a>
+      <a href="content.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i data-lucide="file-text"></i> Content</a>
+    </div>
+  </nav>
+</div>
+
+  <!-- Upload Container -->
+  <div
+    class="max-w-2xl hover:border-pink-700 border-2 mx-auto mt-40 bg-white/5  border-white/10 rounded-3xl p-10 backdrop-blur-lg shadow-2xl fade-in space-y-8 ring-1 ring-white/10">
+    <h2
+      class="text-4xl font-extrabold text-center tracking-tight bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-400 text-transparent bg-clip-text">
+      🎬 Upload a New Video
+    </h2>
+    <p class="text-zinc-400 text-center text-sm">Give your masterpiece a title, a story, and share it with the world.
+    </p>
+
+    <form class="space-y-6" id="uploadForm">
+
+      <!-- Title -->
+      <div>
+        <label for="title" class="block text-sm font-medium text-zinc-300 mb-1">Video Title</label>
+        <input type="text" id="videoTitle" name="title" required
+          class="w-full rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
+          placeholder="Enter video title" />
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="block text-sm font-medium text-zinc-300 mb-1">Description</label>
+        <textarea id="description" name="description" rows="4" required
+          class="w-full rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700 px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+          placeholder="What’s this video about?"></textarea>
+      </div>
+
+      <!-- Video Upload -->
+      <div>
+        <label for="video" class="block text-sm font-medium text-zinc-300 mb-1">Video File</label>
+        <input type="file" id="btn-Videofile" accept="video/*" required
+          class="block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-indigo-600 file:to-purple-600 file:text-white hover:file:from-indigo-500 hover:file:to-purple-500 cursor-pointer transition" />
+      </div>
+
+      <!-- Thumbnail Upload -->
+      <div>
+        <label for="picture" class="block text-sm font-medium text-zinc-300 mb-1">Thumbnail</label>
+        <input type="file" id="btn-Thumbnail" required
+          class="block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-indigo-600 file:to-purple-600 file:text-white hover:file:from-indigo-500 hover:file:to-purple-500 cursor-pointer transition" />
+      </div>
+
+      <!-- Upload Button -->
+      <div>
+        <button type="button" id="btn-upload"
+          class="w-full bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white font-bold py-3 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+          🚀 Upload Video
+        </button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="w-full bg-zinc-800 rounded-full h-4 mt-4 overflow-hidden">
+        <div id="uploadProgressBar"
+          class="bg-gradient-to-r from-indigo-500 to-purple-600 h-4 rounded-full w-0 transition-all duration-500 ease-in-out shadow-inner">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Upload Notification -->
+  <div id="uploadNotification"
+    class="fixed top-6 right-6 flex items-center gap-4 px-6 py-4 rounded-xl z-50 hidden shadow-2xl bg-gradient-to-br from-[#1f1f1f] to-[#2c2c2c] border border-white/10 ring-1 ring-indigo-500/30 backdrop-blur-md fade-in">
+    <div id="uploadIcon"
+      class="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg">
+      <svg id="uploadSuccessIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" class="w-6 h-6 text-white">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+      <svg id="uploadErrorIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        class="w-6 h-6 text-white hidden">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <div>
+      <p id="uploadMessage" class="font-semibold text-base leading-snug">Uploading...</p>
+    </div>
+  </div>
+
+  <script src="sidebar.js"></script>
+  <script src="uploadFile.js"></script>
+</body>
+
+</html>

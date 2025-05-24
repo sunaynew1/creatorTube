@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cld-video-player.cld-dark {
+    background-color: black !important;
+  }
+  
+  .cld-video-player .vjs-control,
+  .cld-video-player .vjs-slider {
+    color: #ffffff !important;
+    background-color: #00000000 !important;
+    border-color: #a855f7 !important;
+  }
+  
+  .cld-video-player .vjs-play-progress,
+  .cld-video-player .vjs-volume-level {
+    background-color: #a855f7 !important;
+  }
+  
+  .cld-video-player .cld-branding {
+    display: none !important;
+  }
+
+ 
