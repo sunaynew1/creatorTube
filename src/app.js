@@ -19,7 +19,7 @@ const app = express()
 
 app.use(
     cors({
-        origin:["http://127.0.0.1:3004", "http://localhost:3004","creator-tube-todos-projects-0a36388c.vercel.app"],
+        origin:["http://127.0.0.1:3004", "http://localhost:3004","creator-tube-todos-projects-0a36388c.vercel.app","https://creator-tube-phi.vercel.app"],
         credentials: true 
     })
 )
@@ -38,6 +38,17 @@ app.use(
 // );
 // common middleware
 // Serve static files from "public"
+
+app.options('*', cors({
+  origin: [
+    "http://127.0.0.1:3004",
+    "http://localhost:3004",
+    "https://creator-tube-q22lhdpup-todos-projects-0a36388c.vercel.app",
+    "https://creator-tube-phi.vercel.app/"
+  ],
+  credentials: true,
+}));
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
