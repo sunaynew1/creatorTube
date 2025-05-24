@@ -106,8 +106,8 @@ const loginUser = asyncHandler(async (req, res) => {
     loggedInUser.accessToken = accessToken
     await loggedInUser.save({ validateBeforeSave: false })
     const options = {
-        httpOnly: false,
-        secure: false,    // true in production (only on HTTPS)
+        httpOnly: true,
+        secure: true,    // true in production (only on HTTPS)
         sameSite: "lax",
         path: "/",
         maxAge: 24 * 60 * 60 * 1000
@@ -143,7 +143,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
         const { accessToken, refreshToken: newRefreshToken } = await generateAccessAndRefreshToken(user._id);
 
         const options = {
-            httpOnly: false,
+            httpOnly: true,
             secure: process.env.NODE_ENV === "production"
         };
 
@@ -195,15 +195,15 @@ const logoutUser = asyncHandler(async (req, res, next) => {
     return res
         .status(200)
         .clearCookie("accessToken", {
-                  httpOnly: false,
-        secure: false,    // true in production (only on HTTPS)
+                  httpOnly: true,
+        secure: true,    // true in production (only on HTTPS)
         sameSite: "lax",
         path: "/"
      
         })
         .clearCookie("refreshToken", {
-                httpOnly: false,
-        secure: false,    // true in production (only on HTTPS)
+                httpOnly: true,
+        secure: true,    // true in production (only on HTTPS)
         sameSite: "lax",
         path: "/"
       
