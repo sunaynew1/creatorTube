@@ -19,7 +19,7 @@ const app = express()
 
 app.use(
     cors({
-        origin:["http://127.0.0.1:3004", "http://localhost:3004","https://creator-tube-phi.vercel.app"],
+        origin:["http://127.0.0.1:3004", "http://localhost:3004","creator-tube-todos-projects-0a36388c.vercel.app"],
         credentials: true 
     })
 )

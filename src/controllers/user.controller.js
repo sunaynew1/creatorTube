@@ -611,6 +611,7 @@ const likesOnVideo = asyncHandler(async (req, res) => {
     // const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findOne({ accessToken: token });
     // console.log(videoLikedUserdData)
+    
     let userExist="";
     video.likes.forEach(like => {
         // console.log(`db id: ${like.userId._id.toString()} comparing with:  ${ user._id.toString()}`)
