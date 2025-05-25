@@ -12,31 +12,44 @@ async function redirectWatch() {
   }
 
 
-
 function createVideoCard({ id, publicId, title, views, description, thumbnailSrc }) {
   const card = document.createElement("div");
   card.className =
-    "bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm w-full";
+    "bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 w-full max-w-sm";
 
-  // Thumbnail Image
+  // Thumbnail
+  const thumbnailWrapper = document.createElement("div");
+  thumbnailWrapper.className = "relative group";
+
   const thumbnail = document.createElement("img");
   thumbnail.setAttribute("id", id);
-  thumbnail.className =
-    "w-full h-48 object-cover transition-transform duration-300 hover:scale-105";
   thumbnail.src = thumbnailSrc;
   thumbnail.alt = title;
+  thumbnail.className =
+    "w-full h-48 object-cover rounded-t-2xl transition duration-300 group-hover:scale-105";
 
-  // Card Content
+  // Optional play overlay
+  const overlay = document.createElement("div");
+  overlay.className =
+    "absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-30 transition duration-300";
+
+  const playIcon = document.createElement("i");
+  playIcon.className = "fas fa-play text-white text-3xl opacity-0 group-hover:opacity-100 transition";
+  overlay.appendChild(playIcon);
+
+  thumbnailWrapper.appendChild(thumbnail);
+  thumbnailWrapper.appendChild(overlay);
+
+  // Content area
   const content = document.createElement("div");
   content.className = "p-4";
 
-  const titleEl = document.createElement("h2");
-  titleEl.className =
-    "text-white text-lg font-semibold truncate";
+  const titleEl = document.createElement("h3");
+  titleEl.className = "text-white text-lg font-semibold truncate";
   titleEl.textContent = title;
 
   const viewsEl = document.createElement("p");
-  viewsEl.className = "text-sm text-gray-400 mt-1";
+  viewsEl.className = "text-sm text-gray-400";
   viewsEl.textContent = `${views} views`;
 
   const descEl = document.createElement("p");
@@ -47,11 +60,12 @@ function createVideoCard({ id, publicId, title, views, description, thumbnailSrc
   content.appendChild(viewsEl);
   content.appendChild(descEl);
 
-  card.appendChild(thumbnail);
+  card.appendChild(thumbnailWrapper);
   card.appendChild(content);
 
   return card;
 }
+
 
 
 // Fetch video data and render cards
