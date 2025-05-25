@@ -55,7 +55,7 @@ window.onload = async () => {
       })
         
       document.getElementById("user_profile").src=data.data.avatar
-        document.getElementById("user_photo").addEventListener("click" , () => {
+        document.getElementById("avatar").addEventListener("click" , () => {
         window.location.href = `profile.html`
       })
        
