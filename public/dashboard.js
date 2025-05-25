@@ -51,7 +51,7 @@ window.onload = async () => {
         const data = await req.json()
 
       document.getElementById("mychannel").addEventListener("click" , () => {
-        window.location.href = `channelPage.html?v=${data.data.owner._id}`
+        window.location.href = `channelPage.html?v=${data.data._id}`
       })
         console.log(data)
       console.log(`pic url : - ${data.data.avatar}`)
