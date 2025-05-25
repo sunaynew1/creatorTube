@@ -13,17 +13,22 @@ async function redirectWatch() {
 
 
 
-function createVideoCard({ id, publicId, title, views, description }) {
+function createVideoCard({ id, publicId, title, views, description ,thumbnailSrc}) {
   const card = document.createElement("div");
   card.className =
     "bg-[#1e1e1e] rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300";
    
 
   // Cloudinary Player hooks to this video by ID
-  const video = document.createElement("video");
-  video.setAttribute("id", id);
-  video.setAttribute("controls", true);
-  video.className = "w-full h-48 object-cover bg-black";
+  // const video = document.createElement("video");
+  // video.setAttribute("id", id);
+  // video.setAttribute("controls", true);
+  // video.className = "w-full h-48 object-cover bg-black";
+
+  const thumbnail = document.createElement("img")
+  thumbnail.setAttribute("id", id)
+  thumbnail.className = " w-[40px] h-[30px]"
+  thumbnail.src= thumbnailSrc
  
   const content = document.createElement("div");
   content.className = "p-4";
@@ -70,6 +75,7 @@ async function fetchVideos() {
         title: data.videoTitle || "Untitled",
         views: data.views || 0,
         description: data.description || "No description",
+        thumbnailSrc:data.thumbnail
       });
       card.style.cursor = 'pointer';
       card.addEventListener("click" , () =>{
@@ -78,26 +84,27 @@ async function fetchVideos() {
      })
       container.appendChild(card);
 
-      const cld = cloudinary.Cloudinary.new({ cloud_name: "dvz27jtw8" });
-      cld.videoPlayer(id, {
-        publicId: data.videoPublicId,
-        fluid: true,
-        controls: false,
-        autoplay: false,
-        posterOptions: {
-          publicId: data.thumbnailPublicId, // The Cloudinary public ID for the image
-          transformation: {
-            width: 480,
-            height: 200,
-            crop: "crop"
-          }
-        }
-      });
-      // document.getElementById("video").addEventListener("click",() =>{
-      //   views++
-      //   console.log(views)
-      // })
-    }
+    //   const cld = cloudinary.Cloudinary.new({ cloud_name: "dvz27jtw8" });
+    //   cld.videoPlayer(id, {
+    //     publicId: data.videoPublicId,
+    //     fluid: true,
+    //     controls: false,
+    //     autoplay: false,
+    //     posterOptions: {
+    //       publicId: data.thumbnailPublicId, // The Cloudinary public ID for the image
+    //       transformation: {
+    //         width: 480,
+    //         height: 200,
+    //         crop: "crop"
+    //       }
+    //     }
+    //   });
+    //   // document.getElementById("video").addEventListener("click",() =>{
+    //   //   views++
+    //   //   console.log(views)
+    //   // })
+    // }
+}
   } catch (err) {
     console.error("Error fetching videos:", err);
   }
