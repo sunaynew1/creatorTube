@@ -54,7 +54,7 @@ window.onload = async () => {
         window.location.href = `channelPage.html?v=${data.data.owner._id}`
       })
         
-      document.getElementById("user_profile").src=data.data.avatar
+      document.getElementById("avatar").src=data.data.avatar
         document.getElementById("avatar").addEventListener("click" , () => {
         window.location.href = `profile.html`
       })
@@ -66,10 +66,10 @@ window.onload = async () => {
 };
 
 // User dropdown toggle
-  document.getElementById('user-menu-button').addEventListener('click', function () {
-    const dropdown = document.getElementById('user-dropdown');
-    dropdown.classList.toggle('hidden');
-  });
+//   document.getElementById('user-menu-button').addEventListener('click', function () {
+//     const dropdown = document.getElementById('user-dropdown');
+//     dropdown.classList.toggle('hidden');
+//   });
 
   // Mobile navbar toggle
   document.querySelectorAll('[data-collapse-toggle]').forEach(button => {
