@@ -13,34 +13,31 @@ async function redirectWatch() {
 
 
 
-function createVideoCard({ id, publicId, title, views, description ,thumbnailSrc}) {
+function createVideoCard({ id, publicId, title, views, description, thumbnailSrc }) {
   const card = document.createElement("div");
   card.className =
-    "bg-[#1e1e1e] rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300";
-   
+    "bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm w-full";
 
-  // Cloudinary Player hooks to this video by ID
-  // const video = document.createElement("video");
-  // video.setAttribute("id", id);
-  // video.setAttribute("controls", true);
-  // video.className = "w-full h-48 object-cover bg-black";
+  // Thumbnail Image
+  const thumbnail = document.createElement("img");
+  thumbnail.setAttribute("id", id);
+  thumbnail.className =
+    "w-full h-48 object-cover transition-transform duration-300 hover:scale-105";
+  thumbnail.src = thumbnailSrc;
+  thumbnail.alt = title;
 
-  const thumbnail = document.createElement("img")
-  thumbnail.setAttribute("id", id)
-  thumbnail.className = " w-[1000px] h-[1000px]"
-  thumbnail.src= thumbnailSrc
- 
+  // Card Content
   const content = document.createElement("div");
   content.className = "p-4";
 
   const titleEl = document.createElement("h2");
-  titleEl.className = "text-lg font-semibold text-white truncate";
+  titleEl.className =
+    "text-white text-lg font-semibold truncate";
   titleEl.textContent = title;
 
   const viewsEl = document.createElement("p");
-  viewsEl.className = "text-sm text-gray-400";
+  viewsEl.className = "text-sm text-gray-400 mt-1";
   viewsEl.textContent = `${views} views`;
-
 
   const descEl = document.createElement("p");
   descEl.className = "text-sm text-gray-300 mt-2 line-clamp-2";
@@ -55,6 +52,7 @@ function createVideoCard({ id, publicId, title, views, description ,thumbnailSrc
 
   return card;
 }
+
 
 // Fetch video data and render cards
 async function fetchVideos() {
