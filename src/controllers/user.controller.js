@@ -432,7 +432,7 @@ const dashboard = asyncHandler(async (req, res) => {
 
     console.log(user)
     console.log(`token recieved ${token}`)
-    return res.status(200).json(new ApiResponse(200, token, "token recieved ${token}"))
+    return res.status(200).json(new ApiResponse(200, user, "token recieved ${token}"))
 })
 
 
