@@ -12,7 +12,9 @@ const app = express();
 
 const allowedOrigins = [
   "https://creator-tube-todos-projects-0a36388c.vercel.app",
-  "https://creator-tube-phi.vercel.app"
+  "https://creator-tube-phi.vercel.app",
+  "http://localhost:3006"
+
 ];
 
 app.use(
