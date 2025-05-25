@@ -1347,6 +1347,11 @@ video {
   background-color: rgb(0 0 0 / 0.5);
 }
 
+.bg-zinc-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1914,6 +1919,11 @@ video {
 
 .shadow-purple-900\/20 {
   --tw-shadow-color: rgb(88 28 135 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-purple-900\/30 {
+  --tw-shadow-color: rgb(88 28 135 / 0.3);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
