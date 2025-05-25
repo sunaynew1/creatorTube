@@ -48,14 +48,31 @@ window.onload = async () => {
              credentials: "include",
             
         })
+        const data = await req.json()
 
       document.getElementById("mychannel").addEventListener("click" , () => {
         window.location.href = `channelPage.html?v=${data.data.owner._id}`
       })
-
+        
+      document.getElementById("user_photo").src=data.data.avatar
+        document.getElementById("user_photo").addEventListener("click" , () => {
+        window.location.href = `profile.html`
+      })
        
         } catch(error){
             console.log("error while sending token")
         }
     // Otherwise, token is present, continue with dashboard operations
 };
+
+
+document.getElementById('user-menu-button').addEventListener('click', function () {
+    const dropdown = document.getElementById('user-dropdown');
+    dropdown.classList.toggle('hidden');
+  });
+
+  // Toggle mobile menu
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const nav = document.getElementById('navbar-user');
+    nav.classList.toggle('hidden');
+  });
