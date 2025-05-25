@@ -27,7 +27,7 @@ function createVideoCard({ id, publicId, title, views, description ,thumbnailSrc
 
   const thumbnail = document.createElement("img")
   thumbnail.setAttribute("id", id)
-  thumbnail.className = " w-[40px] h-[30px]"
+  thumbnail.className = " w-[1000px] h-[1000px]"
   thumbnail.src= thumbnailSrc
  
   const content = document.createElement("div");
