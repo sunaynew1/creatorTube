@@ -611,7 +611,7 @@ const likesOnVideo = asyncHandler(async (req, res) => {
     // const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findOne({ accessToken: token });
     // console.log(videoLikedUserdData)
-    
+
     let userExist="";
     video.likes.forEach(like => {
         // console.log(`db id: ${like.userId._id.toString()} comparing with:  ${ user._id.toString()}`)
@@ -958,6 +958,19 @@ const subscriberCheck = channelData.subscriberDetail.some(subscriber => subscrib
     return res.status(200).json(new ApiResponse(200, "not subscribed"));
   }
 });
+
+const Authorization = asyncHandler(async(req,res) => {
+    const accessToken = req.cookies.accessToken
+    const user = User.findOne({accessToken:accessToken})
+
+    if(user){
+        return res.status(200).json(new ApiResponse(200,"authorized","success"))
+
+    }
+    else{
+        return res.status(400).json(new ApiResponse(400,"not authorized","failed"))
+    }
+})
 export {
     registerUser,
     loginUser,
@@ -991,7 +1004,8 @@ export {
     newPw,
     views,
     onlyId,
-    subscribeCheck
+    subscribeCheck,
+    Authorization
     // newComment
 
 };

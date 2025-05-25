@@ -31,7 +31,8 @@ import { logoutUser,
       newPw,
       views,
       onlyId,
-      subscribeCheck
+      subscribeCheck,
+      Authorization
 
     } from "../controllers/user.controller.js"
 // import multer from "multer";
@@ -79,9 +80,11 @@ router.route("/register").post(
 
         router.route("/content").get(fetchContent)
         router.route("/videoData").post(videoData)
+          router.route("/Authorization").post(Authorization)
     //     router.route("/watch").get(watchVideo)
     // //Secured routes
     // router.route("/newComment").post(verifyJWT,newComment)
+     
     router.route("/subscribeCheck").post(verifyJWT,subscribeCheck)
       router.route("/views").post(verifyJWT,views)
       router.route("/onlyId").post(verifyJWT,onlyId)
