@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,15 +15,16 @@
       font-family: 'Inter', sans-serif;
     }
 
-    .fade-in {
-      animation: fadeIn 0.8s ease-in-out;
+    .animate-fade {
+      animation: fadeIn 1.4s ease-out both;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -31,17 +33,31 @@
   </style>
 </head>
 
-<body class="bg-gradient-to-tl from-black to-slate-950 min-h-screen text-white overflow-x-hidden">
+<body class="bg-gradient-to-tl from-black to-slate-950 text-white min-h-screen overflow-x-hidden">
 
   <!-- Sidebar -->
-  <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 pt-[100px] bg-zinc-900/10 border-r border-zinc-800 p-6 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-xl">
+  <aside id="sidebar"
+    class="fixed inset-y-0 left-0 w-64 pt-[100px] bg-zinc-900/10 border-r border-zinc-800 p-6 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-xl">
+
     <nav class="space-y-5 text-sm text-zinc-300 font-medium">
-      <a href="dashboard.html" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="home"></i> Home</a>
-      <a href="content.html" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="video"></i> Content</a>
-      <a id="mychannel" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition cursor-pointer"><i data-lucide="home"></i> My Channel Page</a>
-      <a href="watchHistory.html" class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i data-lucide="history"></i> Watch History</a>
-      <a href="uploadFile.html" class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i data-lucide="upload"></i> Uploads</a>
-      <a href="manageVideo.html" class="flex items-center gap-3 text-purple-400 bg-white/10 p-4 rounded-lg"><i data-lucide="file-video"></i> Manage Videos</a>
+      <a href="dashboard.html"
+        class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+          data-lucide="home"></i> Home</a>
+      <a href="content.html"
+        class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+          data-lucide="video"></i> Content</a>
+      <a id="mychannel"
+        class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition cursor-pointer"><i
+          data-lucide="home"></i> My Channel Page</a>
+      <a href="watchHistory.html"
+        class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+          data-lucide="history"></i> Watch History</a>
+      <a href="uploadFile.html"
+        class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+          data-lucide="upload"></i> Uploads</a>
+      <a href="manageVideo.html"
+        class="flex items-center gap-3 text-purple-400 bg-white/10 p-4 rounded-lg"><i
+          data-lucide="file-video"></i> Manage Videos</a>
     </nav>
 
     <div class="absolute bottom-6 left-6">
@@ -58,53 +74,63 @@
     </div>
   </aside>
 
-  <!-- Sidebar Toggle -->
-  <button id="sidebarToggle" class="fixed top-9 left-10 z-50 p-2 rounded-lg bg-zinc-800 border border-zinc-600 text-white hover:bg-zinc-700">
+  <!-- Sidebar Toggle Button -->
+  <button id="sidebarToggle"
+    class="fixed top-9 left-10 z-50 p-2 rounded-lg bg-zinc-800 border border-zinc-600 text-white hover:bg-zinc-700">
     <i data-lucide="menu" class="w-5 h-5"></i>
   </button>
 
   <!-- Navbar -->
   <div class="flex w-full justify-center">
-    <nav class="fixed top-5 w-[80%] rounded-full bg-white/10 backdrop-blur-lg shadow-xl px-6 py-4 flex justify-between items-center z-30">
-      <div class="text-2xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
+    <nav
+      class="fixed top-5 mr-[20px] rounded-full w-[80%] bg-white/10 backdrop-blur-lg shadow-xl px-6 py-4 flex justify-between items-center z-30">
+      <div
+        class="text-2xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
         <i data-lucide="upload-cloud" class="w-6 h-6 text-pink-400"></i> CreatorHub
       </div>
       <div class="hidden md:flex gap-8 text-sm text-gray-300 font-medium">
-        <a href="dashboard.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i data-lucide="home"></i> Home</a>
-        <a href="uploadFile.html" class="flex items-center gap-2 text-pink-400"><i data-lucide="upload"></i> Upload</a>
-        <a href="content.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i data-lucide="file-text"></i> Content</a>
+        <a href="dashboard.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
+            data-lucide="home"></i> Home</a>
+        <a href="uploadFile.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
+            data-lucide="upload"></i> Upload</a>
+        <a href="content.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
+            data-lucide="file-text"></i> Content</a>
       </div>
     </nav>
   </div>
 
-  <!-- Main Content -->
-  <main class="pt-32 max-w-7xl mx-auto px-6 fade-in">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-semibold text-purple-300">My Videos</h1>
-      <button onclick="window.location.href='uploadFile.html'" class="bg-[#731cbe] hover:bg-purple-800 text-white px-5 py-2.5 rounded-xl transition">
-        + Add Video
-      </button>
-    </div>
+  <!-- Manage Videos Section -->
+  <section class="pt-44 pb-24 px-6 animate-fade">
+    <h1
+      class="text-4xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 text-transparent bg-clip-text text-center">
+      Manage Your Videos
+    </h1>
+    <p class="mt-4 text-center text-gray-400 max-w-2xl mx-auto">
+      Here you can update, delete, or review your uploaded content.
+    </p>
 
-    <div id="videoList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <!-- Dynamic video cards go here -->
-    </div>
-  </main>
-
-  <!-- Edit Modal -->
-  <div id="editModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50">
-    <div class="bg-[#1c1c1c] text-white p-6 rounded-xl w-full max-w-md border border-purple-800">
-      <h2 class="text-xl font-bold mb-4 text-purple-300">Edit Video</h2>
-      <input id="editTitle" type="text" placeholder="Title" class="w-full mb-3 p-2 border border-purple-700 bg-transparent rounded outline-none focus:ring-1 focus:ring-purple-500" />
-      <textarea id="editDescription" placeholder="Description" class="w-full p-2 border border-purple-700 bg-transparent rounded outline-none focus:ring-1 focus:ring-purple-500"></textarea>
-      <div class="flex justify-end mt-4 gap-2">
-        <button onclick="closeEditModal()" class="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600">Cancel</button>
-        <button id="btn-save" class="px-4 py-2 bg-[#41116a] text-white rounded hover:bg-purple-800">Save</button>
+    <!-- Example Video Cards -->
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white/5 p-5 rounded-xl shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold">My Awesome Video</h3>
+          <span class="text-xs text-gray-400">2 days ago</span>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">Short description about the video...</p>
+        <div class="flex gap-4 mt-4">
+          <button class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-sm">Edit</button>
+          <button class="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-400 text-white text-sm">Delete</button>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <script src="manageVideo.js"></script>
+      <!-- Add more cards dynamically via JS -->
+    </div>
+  </section>
+
   <script src="sidebar.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
+
 </html>
