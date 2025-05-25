@@ -13,61 +13,68 @@
   </style>
 </head>
 
-<body class="bg-gradient-to-br from-black via-[#1b0033] to-[#4a137a] text-white min-h-screen p-6">
+<body class="bg-gradient-to-tl from-black to-slate-950 text-white min-h-screen p-6">
   <!-- Sidebar -->
   <aside id="sidebar"
-    class="fixed inset-y-0 left-0 w-64 pt-[100px] bg-[#1a1a1a]/80 border-r border-zinc-800 p-6 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-2xl rounded-tr-2xl rounded-br-2xl">
-    <nav class="space-y-4 text-sm text-zinc-300 font-medium">
-      <a href="dashboard.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#2a2a2a] hover:text-purple-400">
-        <i data-lucide="home"></i> Home
-      </a>
-      <a href="content.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#2a2a2a] hover:text-purple-400">
-        <i data-lucide="video"></i> Content
-      </a>
-      <a id="mychannel" type="button" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#2a2a2a] hover:text-purple-400">
-        <i data-lucide="home"></i> My Channel Page
-      </a>
-      <a href="watchHistory.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#2a2a2a] hover:text-purple-400">
-        <i data-lucide="history"></i> Watch History
-      </a>
-      <a href="uploadFile.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#2a2a2a] hover:text-purple-400">
-        <i data-lucide="upload"></i> Uploads
-      </a>
-      <a href="manageVideo.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#2a2a2a] hover:text-purple-400">
-        <i data-lucide="file-video"></i> Manage Videos
-      </a>
+    class="fixed inset-y-0 left-0 w-64 pt-[100px] bg-zinc-900/10 border-r border-zinc-800 p-6 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-xl">
+
+    <nav class="space-y-5  text-sm text-zinc-300 font-medium">
+      <a href="dashboard.html"
+        class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+          data-lucide="home"></i> Home</a>
+      <a href="content.html"
+        class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+          data-lucide="video"></i> Content</a>
+      <a type="button" id="mychannel"
+        class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+          data-lucide="home"></i> My Channel Page</a>
+      <a href="watchHistory.html"
+        class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+          data-lucide="history"></i> Watch History</a>
+      <a href="uploadFile.html"
+        class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 rounded-lg p-4"><i
+          data-lucide="upload"></i> Uploads</a>
+      <a href="manageVideo.html"
+        class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+          data-lucide="file-video"></i> Manage Videos</a>
     </nav>
 
-    <div class="absolute bottom-6 left-6 w-[90%]">
-      <div class="flex items-center gap-4 p-3 rounded-xl hover:bg-[#2a2a2a]" id="profilediv">
-        <img id="profile" class="w-10 h-10 rounded-full border border-purple-700" alt="Profile" />
+    <div class=" absolute bottom-6 left-6">
+      <div class=" flex items-center gap-4 hover:bg-white/10 p-4 rounded-lg" id="profilediv">
+        <img id="profile" class="w-10 h-10 rounded-full" alt="Profile" />
         <div>
-          <p class="text-sm font-semibold text-white" id="username">John Doe</p>
+          <p class="text-sm font-semibold" id="username">John Doe</p>
+
         </div>
       </div>
-      <div class="flex items-center gap-4 p-3 mt-2 rounded-xl hover:bg-[#2a2a2a] hover:cursor-pointer" id="logout">
-        <i data-lucide="power"></i>
-        <a class="text-xs text-purple-400">Log out</a>
+      <div class="flex items-center gap-4 hover:bg-white/10 p-4 rounded-lg hover:cursor-pointer" id="logout">
+        <i data-lucide="power" class="flex"></i>
+        <a class="text-xs text-center text-purple-400 p-1 ">Log out</a>
       </div>
+    </div>
     </div>
   </aside>
 
-  <!-- Sidebar Toggle -->
+  <!-- Sidebar Toggle Button -->
   <button id="sidebarToggle"
-    class="fixed top-6 left-6 z-50 p-2 rounded-lg bg-zinc-900 border border-zinc-700 text-white hover:bg-zinc-800 shadow-md">
+    class="fixed top-9 left-10 z-50 p-2 rounded-lg bg-zinc-800 border border-zinc-600 text-white hover:bg-zinc-700">
     <i data-lucide="menu" class="w-5 h-5"></i>
   </button>
 
-  <!-- Navbar -->
-  <div class="flex w-full justify-center">
-    <nav class="fixed top-5 w-[80%] bg-[#1e1e1e]/60 backdrop-blur-lg shadow-lg rounded-full px-8 py-3 flex justify-between items-center z-30">
-      <div class="text-2xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
+   <!-- Navbar -->
+  <div class="flex w-full justify-center ">
+    <nav
+      class="fixed top-5 mr-[20px] rounded-full w-[80%] bg-white/10 backdrop-blur-lg shadow-xl px-6 py-4 flex justify-between items-center z-30">
+      <div
+        class="text-2xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
         <i data-lucide="upload-cloud" class="w-6 h-6 text-pink-400"></i> CreatorHub
       </div>
       <div class="hidden md:flex gap-8 text-sm text-gray-300 font-medium">
-        <a href="dashboard.html" class="flex items-center gap-2 hover:text-pink-400"><i data-lucide="home"></i> Home</a>
+        <a href="dashboard.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
+            data-lucide="home"></i> Home</a>
         <a href="uploadFile.html" class="flex items-center gap-2 text-pink-400"><i data-lucide="upload"></i> Upload</a>
-        <a href="content.html" class="flex items-center gap-2 hover:text-pink-400"><i data-lucide="file-text"></i> Content</a>
+        <a href="content.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
+            data-lucide="file-text"></i> Content</a>
       </div>
     </nav>
   </div>
