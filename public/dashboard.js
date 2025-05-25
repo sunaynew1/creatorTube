@@ -53,7 +53,7 @@ window.onload = async () => {
       document.getElementById("mychannel").addEventListener("click" , () => {
         window.location.href = `channelPage.html?v=${data.data.owner._id}`
       })
-        
+        console.log(data)
       console.log(`pic url : - ${data.data.avatar}`)
       document.getElementById("avatar").src=data.data.avatar
         document.getElementById("avatar").addEventListener("click" , () => {
