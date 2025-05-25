@@ -2586,6 +2586,11 @@ video {
     border-color: rgb(75 85 99 / var(--tw-divide-opacity, 1));
   }
 
+  .dark\:divide-gray-800 > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 1;
+    border-color: rgb(31 41 55 / var(--tw-divide-opacity, 1));
+  }
+
   .dark\:border-gray-700 {
     --tw-border-opacity: 1;
     border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
