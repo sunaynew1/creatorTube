@@ -750,6 +750,10 @@ video {
   margin-top: 80px;
 }
 
+.mt-\[120px\] {
+  margin-top: 120px;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -1111,6 +1115,14 @@ video {
   border-bottom-left-radius: 0.75rem;
 }
 
+.rounded-br-2xl {
+  border-bottom-right-radius: 1rem;
+}
+
+.rounded-tr-2xl {
+  border-top-right-radius: 1rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1197,6 +1209,11 @@ video {
 .border-zinc-800 {
   --tw-border-opacity: 1;
   border-color: rgb(39 39 42 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#4c2671\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(76 38 113 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[\#0d0d0d\] {
@@ -1356,6 +1373,28 @@ video {
   background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#1a1a1a\]\/80 {
+  background-color: rgb(26 26 26 / 0.8);
+}
+
+.bg-\[\#1e1e1e\]\/60 {
+  background-color: rgb(30 30 30 / 0.6);
+}
+
+.bg-\[\#1f1f1f\]\/90 {
+  background-color: rgb(31 31 31 / 0.9);
+}
+
+.bg-\[\#262626\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1));
+}
+
+.bg-purple-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 33 168 / var(--tw-bg-opacity, 1));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1478,6 +1517,11 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #ec4899 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-\[\#1b0033\] {
+  --tw-gradient-to: rgb(27 0 51 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #1b0033 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .to-\[\#2c2c2c\] {
   --tw-gradient-to: #2c2c2c var(--tw-gradient-to-position);
 }
@@ -1536,6 +1580,10 @@ video {
 
 .to-\[\#4a137a\] {
   --tw-gradient-to: #4a137a var(--tw-gradient-to-position);
+}
+
+.to-pink-600 {
+  --tw-gradient-to: #db2777 var(--tw-gradient-to-position);
 }
 
 .bg-clip-text {
@@ -2207,6 +2255,16 @@ video {
 .hover\:bg-red-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-\[\#2a2a2a\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(42 42 42 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-zinc-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:from-pink-400:hover {
