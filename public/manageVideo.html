@@ -14,9 +14,7 @@
   <script src="sidebar.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-  lucide.createIcons();
-  </script>
+  
 </head>
 
 <body class="bg-gradient-to-tl from-black to-slate-950 text-white min-h-screen p-6">
@@ -116,7 +114,11 @@
       </div>
     </div>
   </div>
-
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
+</script>
   <script src="manageVideo.js"></script>
   
 </body>
