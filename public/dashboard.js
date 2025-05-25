@@ -65,14 +65,18 @@ window.onload = async () => {
     // Otherwise, token is present, continue with dashboard operations
 };
 
-
-document.getElementById('user-menu-button').addEventListener('click', function () {
+// User dropdown toggle
+  document.getElementById('user-menu-button').addEventListener('click', function () {
     const dropdown = document.getElementById('user-dropdown');
     dropdown.classList.toggle('hidden');
   });
 
-  // Toggle mobile menu
-  document.getElementById('menu-toggle').addEventListener('click', function () {
-    const nav = document.getElementById('navbar-user');
-    nav.classList.toggle('hidden');
+  // Mobile navbar toggle
+  document.querySelectorAll('[data-collapse-toggle]').forEach(button => {
+    const targetId = button.getAttribute('data-collapse-toggle');
+    const target = document.getElementById(targetId);
+
+    button.addEventListener('click', () => {
+      target.classList.toggle('hidden');
+    });
   });
