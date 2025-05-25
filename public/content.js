@@ -50,7 +50,7 @@ function createVideoCard({ id, publicId, title, views, description ,thumbnailSrc
   content.appendChild(viewsEl);
   content.appendChild(descEl);
 
-  card.appendChild(video);
+  card.appendChild(thumbnail);
   card.appendChild(content);
 
   return card;
