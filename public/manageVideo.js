@@ -1,6 +1,6 @@
  let videos=null
  async function fetchData(){
-  const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/myVideos",{
+  const req = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/myVideos",{
     method:"POST",
     headers: {
         "Content-Type" : "application/json"
@@ -17,7 +17,7 @@
 
  async function deleteAVideo(videopublicId,thumbnailpublicId){
   console.log("sdasda",videopublicId,thumbnailpublicId)
-  const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/deleteVideo",{
+  const req = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/deleteVideo",{
    
      method:"POST",
     headers: {
@@ -95,7 +95,7 @@
        const video = videos.find(v => v.videoId._id === currentEditId);
        const videoId = video.videoId._id
     // console.log(`video id:${id}`)
-    const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/editVideo",{
+    const req = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/editVideo",{
     method:"POST",
     headers: {
         "Content-Type" : "application/json"
