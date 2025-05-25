@@ -763,6 +763,10 @@ video {
   margin-top: 140px;
 }
 
+.mt-\[150px\] {
+  margin-top: 150px;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -1622,6 +1626,10 @@ video {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.font-\[Inter\] {
+  font-family: Inter;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2279,6 +2287,10 @@ video {
 
   .sm\:gap-0 {
     gap: 0px;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
   }
 
   .sm\:p-6 {
