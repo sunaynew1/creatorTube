@@ -40,7 +40,7 @@
         const videoId = (video.videoId._id)
         console.log(`asdasdasd${typeof(videoId)}`)
         const div = document.createElement('div');
-        div.className = 'bg-[#2a2a2a] p-4 rounded-xl shadow-md shadow-purple-900/20 flex items-start gap-4 border border-purple-900';
+        div.className = 'bg-[#2a2a2a] p-4 min-w-[200px] rounded-xl shadow-md shadow-purple-900/20 flex items-start gap-4 border border-purple-900';
         div.innerHTML = `
           <img src="${video.videoId.thumbnail}" alt="Thumbnail" class="w-32 h-20 object-cover rounded-lg" />
           <div class="flex-1">
@@ -48,8 +48,8 @@
             <p class="text-gray-400 mb-1">${video.videoId.description}</p>
             <div class="text-sm text-gray-400 flex gap-4">
               <span>👁️ ${video.videoId.views} views</span>
-              <span>👍 ${video.videoId.likes}</span>
-              <span>👎 ${video.videoId.dislikes}</span>
+              <span>👍 ${video.videoId.likesCount}</span>
+              <span>👎 ${video.videoId.dislikesCount}</span>
             </div>
           </div>
           <div class="flex flex-col gap-2">
