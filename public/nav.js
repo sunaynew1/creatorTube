@@ -42,6 +42,16 @@ async function userData() {
     //   console.warn("My Channel button not found.");
     // }
 
+// Mobile navbar toggle
+  document.querySelectorAll("[data-collapse-toggle]").forEach((button) => {
+    const targetId = button.getAttribute("data-collapse-toggle");
+    const target = document.getElementById(targetId);
+
+    button.addEventListener("click", () => {
+      target?.classList.toggle("hidden");
+    });
+  });
+
   } catch (error) {
     console.error("Error loading dashboard:", error);
   }
