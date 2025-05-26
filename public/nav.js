@@ -46,7 +46,7 @@ async function userData(){
     if (channelBtn) {
       channelBtn.addEventListener("click", () => {
         console.log("channel button")
-        const url = `channelPage.html?v=${userId}`;
+        const url = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
         console.log("Navigating to:", url);
         window.location.href = url;
       });
