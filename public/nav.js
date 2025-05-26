@@ -18,8 +18,9 @@ async function userData() {
 async function working(){
     const data = await userData()
 
-    const btn = document.getElementById("mychannel")
+    const link = document.getElementById("mychannel")
     console.log(btn)
+    link.href=`login.html`
 
 
 
