@@ -53,9 +53,7 @@ window.onload = async () => {
  
         console.log(data.data._id)
 
-         document.getElementById("mychannel").addEventListener("click" ,() => {
-       window.location.href=`channelPage.html?v=${data.data._id}`
-       })
+       
 
         console.log(data)
       console.log(`pic url : - ${data.data.avatar}`)
@@ -63,6 +61,10 @@ window.onload = async () => {
         document.getElementById("avatar").addEventListener("click" , () => {
         window.location.href = `profile.html`
       })
+       
+        document.getElementById("mychannel").addEventListener("click" ,() => {
+       window.location.href=`channelPage.html?v=${data.data._id}`
+       })
        
         } catch(error){
             console.log(error)
