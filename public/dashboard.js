@@ -1,3 +1,5 @@
+
+function fn(){
 async function authorizationCheck() {
   try {
     const res = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/Authorization", {
@@ -81,3 +83,11 @@ window.onload = async () => {
     });
   });
 };
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  fn()
+   lucide.createIcons();
+
+});
