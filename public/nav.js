@@ -44,6 +44,10 @@ async function userData(){
     console.log("channel button before")
     const channelBtn = document.getElementById("mychannel");
     console.log(channelBtn)
+
+    channelBtn.addEventListener("click" , () => {
+        console.log("hello")
+    })
     // if (channelBtn) {
     //   channelBtn.addEventListener("click", () => {
     //     console.log("channel button")
