@@ -1,98 +1,83 @@
-
-
 async function authorizationCheck() {
-    try{
-        const req = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/Authorization",{
-            method:"POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-             credentials: "include",
-            
-        })
+  try {
+    const res = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/Authorization", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
 
-        const data = await req.json()
+    const data = await res.json();
 
-        if(data.message != "success"){
-         window.location.href="login.html"
-        }
-
-        }catch(error){
-            console.log(`dashboard error : ${error}`)
-        }
+    if (data.message !== "success") {
+      window.location.href = "login.html";
+    }
+  } catch (error) {
+    console.log(`Authorization error: ${error}`);
+  }
 }
 
 window.onload = async () => {
-    console.log("dashboard code is working");
+  console.log("Dashboard script loaded.");
 
-    // // Get the token from cookie string
-    // const token =  document.cookie
-    //     .split('; ')
-    //     .find(row => row.startsWith('accessToken='))
-    //     ?.split('=')[1];
-    //     // const token=req.cookies.accessToken
-    //     console.log(`token recieved ${token}`)
-    // if (!token || token === "undefined") {
-    //     // No token found or token is invalid
-    //     window.location.href = "login.html";
-    // }
+  // Optional: Run auth check first
+  await authorizationCheck();
 
-    
+  try {
+    const res = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/dashboard", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
 
-    try{
-        const req = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/dashboard",{
-            method:"POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-             credentials: "include",
-            
-        })
-        const data = await req.json()
-        
- 
-        console.log(data.data._id)
+    const data = await res.json();
 
-       
+    console.log("User data received:", data);
 
-        console.log(data)
-      console.log(`pic url : - ${data.data.avatar}`)
-      document.getElementById("avatar").src=data.data.avatar
-        document.getElementById("avatar").addEventListener("click" , () => {
-        window.location.href = `profile.html`
-      })
-       
-        console.log(`https://creator-tube-phi.vercel.app/channelPage.html?v=${data.data._id}`)
+    // Guard check
+    if (!data?.data?._id) {
+      throw new Error("User ID missing in dashboard data");
+    }
 
-      const channelBtn = document.getElementById("mychannel");
-      console.log(channelBtn)
-if (channelBtn) {
-  channelBtn.addEventListener("click", () => {
-    window.location.href = `uploadFile.html`;
-  });
-} else {
-  console.warn("Button #mychannel not found.");
-}
+    const userId = data.data._id;
 
-        } catch(error){
-            console.log(error)
-            console.log("error while sending token")
-        }
-    // Otherwise, token is present, continue with dashboard operations
-};
+    // Update avatar image
+    const avatar = document.getElementById("avatar");
+    if (avatar) {
+      avatar.src = data.data.avatar;
+      avatar.addEventListener("click", () => {
+        window.location.href = "profile.html";
+      });
+    } else {
+      console.warn("Avatar element not found.");
+    }
 
-// User dropdown toggle
-//   document.getElementById('user-menu-button').addEventListener('click', function () {
-//     const dropdown = document.getElementById('user-dropdown');
-//     dropdown.classList.toggle('hidden');
-//   });
+    // Add event to "My Channel" button
+    const channelBtn = document.getElementById("mychannel");
+    if (channelBtn) {
+      channelBtn.addEventListener("click", () => {
+        const url = `channelPage.html?v=${userId}`;
+        console.log("Navigating to:", url);
+        window.location.href = url;
+      });
+    } else {
+      console.warn("Button #mychannel not found.");
+    }
+
+  } catch (error) {
+    console.error("Error loading dashboard:", error);
+  }
 
   // Mobile navbar toggle
-  document.querySelectorAll('[data-collapse-toggle]').forEach(button => {
-    const targetId = button.getAttribute('data-collapse-toggle');
+  document.querySelectorAll("[data-collapse-toggle]").forEach((button) => {
+    const targetId = button.getAttribute("data-collapse-toggle");
     const target = document.getElementById(targetId);
 
-    button.addEventListener('click', () => {
-      target.classList.toggle('hidden');
+    button.addEventListener("click", () => {
+      target?.classList.toggle("hidden");
     });
   });
+};
