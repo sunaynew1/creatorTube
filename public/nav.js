@@ -8,7 +8,7 @@
       });
     });
 
-
+async function userData(){
      try {
     const res = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/dashboard", {
       method: "POST",
@@ -55,3 +55,4 @@
   } catch (error) {
     console.error("Error loading dashboard:", error);
   }
+}
