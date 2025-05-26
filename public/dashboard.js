@@ -62,6 +62,7 @@ window.onload = async () => {
       })
        
         } catch(error){
+            console.log(error)
             console.log("error while sending token")
         }
     // Otherwise, token is present, continue with dashboard operations
