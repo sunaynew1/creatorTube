@@ -49,8 +49,11 @@ window.onload = async () => {
             
         })
         const data = await req.json()
+        
+ 
+        console.log(data.data._id)
 
-      document.getElementById("mychannel").addEventListener("click").href=`channelPage.html?v=${data.data._id}`
+    //   document.getElementById("mychannel").addEventListener("click").href=`channelPage.html?v=${data.data._id}`
         console.log(data)
       console.log(`pic url : - ${data.data.avatar}`)
       document.getElementById("avatar").src=data.data.avatar
