@@ -44,10 +44,10 @@ async function userData(){
     console.log("channel button before")
     const channelBtn = document.getElementById("mychannel");
     console.log(channelBtn)
-
-    channelBtn.addEventListener("hover" , () => {
-        console.log("hello")
-    })
+ 
+    channelBtn.href=`https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
+    console.log("reached here after btn")
+    
     // if (channelBtn) {
     //   channelBtn.addEventListener("click", () => {
     //     console.log("channel button")
