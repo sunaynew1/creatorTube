@@ -9,40 +9,21 @@ async function userData() {
     });
 
     const data = await res.json();
-    console.log("User data received:", data);
+    
+}catch(error){
+    console.log(error)
+}
+}
 
-    if (!data?.data?._id) {
-      throw new Error("User ID missing in dashboard data");
-    }
+async function working(){
+    const data = await userData()
 
-    const userId = data.data._id;
+    const btn = document.getElementById("mychannel")
+    console.log(btn)
 
-    // ✅ Set avatar
-    const avatar = document.getElementById("avatar");
-    if (avatar) {
-      avatar.src = data.data.avatar;
-      avatar.addEventListener("click", () => {
-        window.location.href = "profile.html";
-      });
-    } else {
-      console.warn("Avatar element not found.");
-    }
 
-    // ✅ Set channel link
-    // const channelBtn = document.getElementById("mychannel");
-      console.log(data)
-  document.getElementById("mychannel").addEventListener("click" , () => {
-        window.location.href = `channelPage.html?v=${data.data._id}`
-      })
-    // if (channelBtn) {
-    //     channelBtn.href=`profile.html`
-    // //   channelBtn.href = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
-    //   console.log("Channel button href set.");
-    // } else {
-    //   console.warn("My Channel button not found.");
-    // }
 
-// Mobile navbar toggle
+    // Mobile navbar toggle
   document.querySelectorAll("[data-collapse-toggle]").forEach((button) => {
     const targetId = button.getAttribute("data-collapse-toggle");
     const target = document.getElementById(targetId);
@@ -51,10 +32,56 @@ async function userData() {
       target?.classList.toggle("hidden");
     });
   });
-
-  } catch (error) {
-    console.error("Error loading dashboard:", error);
-  }
 }
 
-document.addEventListener("DOMContentLoaded", userData);
+
+
+document.addEventListener("DOMContentLoaded", working);
+
+
+// console.log("User data received:", data);
+
+//     if (!data?.data?._id) {
+//       throw new Error("User ID missing in dashboard data");
+//     }
+
+//     const userId = data.data._id;
+
+//     // ✅ Set avatar
+//     const avatar = document.getElementById("avatar");
+//     if (avatar) {
+//       avatar.src = data.data.avatar;
+//       avatar.addEventListener("click", () => {
+//         window.location.href = "profile.html";
+//       });
+//     } else {
+//       console.warn("Avatar element not found.");
+//     }
+
+//     // ✅ Set channel link
+//     // const channelBtn = document.getElementById("mychannel");
+//       console.log(data)
+//   document.getElementById("mychannel").addEventListener("click" , () => {
+//         window.location.href = `channelPage.html?v=${data.data._id}`
+//       })
+//     // if (channelBtn) {
+//     //     channelBtn.href=`profile.html`
+//     // //   channelBtn.href = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
+//     //   console.log("Channel button href set.");
+//     // } else {
+//     //   console.warn("My Channel button not found.");
+//     // }
+
+// // Mobile navbar toggle
+//   document.querySelectorAll("[data-collapse-toggle]").forEach((button) => {
+//     const targetId = button.getAttribute("data-collapse-toggle");
+//     const target = document.getElementById(targetId);
+
+//     button.addEventListener("click", () => {
+//       target?.classList.toggle("hidden");
+//     });
+//   });
+
+//   } catch (error) {
+//     console.error("Error loading dashboard:", error);
+//   }
