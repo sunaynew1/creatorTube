@@ -41,9 +41,11 @@ async function userData(){
     }
 
     // Add event to "My Channel" button
+    console.log("channel button before")
     const channelBtn = document.getElementById("mychannel");
     if (channelBtn) {
       channelBtn.addEventListener("click", () => {
+        console.log("channel button")
         const url = `channelPage.html?v=${userId}`;
         console.log("Navigating to:", url);
         window.location.href = url;
