@@ -62,7 +62,7 @@ window.onload = async () => {
         window.location.href = `profile.html`
       })
        
-        console.log(`https://creator-tube-phi.vercel.app/${data.data._id}`)
+        console.log(`https://creator-tube-phi.vercel.app/channelPage.html?v=${data.data._id}`)
 
       const channelBtn = document.getElementById("mychannel");
 if (channelBtn) {
