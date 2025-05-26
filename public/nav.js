@@ -18,14 +18,21 @@ async function userData() {
 async function working(){
     const data = await userData()
 
-    const link = document.getElementById("cc")
+    const navbar = document.getElementById("channel_nav")
     // console.log(btn)
     // link.href=`login.html`
 
-    link.addEventListener("click", () => {
-        console.log("workinggggggg")
+    navbar.addEventListener("click", () => {
+       window.location.href = `channelPage.html?v=${data.data._id}`
     })
 
+    const dropdown = document.getElementById("channel_drop")
+    // console.log(btn)
+    // link.href=`login.html`
+
+    dropdown.addEventListener("click", () => {
+       window.location.href = `channelPage.html?v=${data.data._id}`
+    })
 
 
     // Mobile navbar toggle
