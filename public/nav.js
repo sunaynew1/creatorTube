@@ -42,4 +42,4 @@ async function userData() {
   }
 }
 
-userData();
+document.addEventListener("DOMContentLoaded", userData);
