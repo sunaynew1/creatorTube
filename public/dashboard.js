@@ -68,7 +68,7 @@ window.onload = async () => {
       console.log(channelBtn)
 if (channelBtn) {
   channelBtn.addEventListener("click", () => {
-    window.location.href = `channelPage.html?v=${data.data._id}`;
+    window.location.href = `uploadFile.html`;
   });
 } else {
   console.warn("Button #mychannel not found.");
