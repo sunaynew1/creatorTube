@@ -54,7 +54,7 @@ window.onload = async () => {
         console.log(data.data._id)
 
          document.getElementById("mychannel").addEventListener("click" ,() => {
-        document.getElementById("mychannel").src=`channelPage.html?v=${data.data._id}`
+       window.location.href=`channelPage.html?v=${data.data._id}`
        })
 
         console.log(data)
