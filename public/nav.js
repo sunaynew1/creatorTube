@@ -56,3 +56,6 @@ async function userData(){
     console.error("Error loading dashboard:", error);
   }
 }
+
+
+userData();
