@@ -55,7 +55,7 @@ window.onload = async () => {
 
         const channelLink = document.getElementById("mychannel");
       if (channelLink) {
-        channelLink.href = `channelPage.html?v=${userId}`;
+        channelLink.href = `channelPage.html?v=${data.data._id}`;
       }
         console.log(data)
       console.log(`pic url : - ${data.data.avatar}`)
