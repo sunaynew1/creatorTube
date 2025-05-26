@@ -43,16 +43,17 @@ async function userData(){
     // Add event to "My Channel" button
     console.log("channel button before")
     const channelBtn = document.getElementById("mychannel");
-    if (channelBtn) {
-      channelBtn.addEventListener("click", () => {
-        console.log("channel button")
-        const url = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
-        console.log("Navigating to:", url);
-        window.location.href = url;
-      });
-    } else {
-      console.warn("Button #mychannel not found.");
-    }
+    console.log(channelBtn)
+    // if (channelBtn) {
+    //   channelBtn.addEventListener("click", () => {
+    //     console.log("channel button")
+    //     const url = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
+    //     console.log("Navigating to:", url);
+    //     window.location.href = url;
+    //   });
+    // } else {
+    //   console.warn("Button #mychannel not found.");
+    // }
 
   } catch (error) {
     console.error("Error loading dashboard:", error);
