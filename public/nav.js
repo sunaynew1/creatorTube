@@ -45,7 +45,7 @@ async function userData(){
     const channelBtn = document.getElementById("mychannel");
     console.log(channelBtn)
 
-    channelBtn.addEventListener("click" , () => {
+    channelBtn.addEventListener("hover" , () => {
         console.log("hello")
     })
     // if (channelBtn) {
