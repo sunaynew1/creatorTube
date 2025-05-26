@@ -62,10 +62,15 @@ window.onload = async () => {
         window.location.href = `profile.html`
       })
        
-        document.getElementById("mychannel").addEventListener("click" ,() => {
-       window.location.href=`channelPage.html?v=${data.data._id}`
-       })
-       
+      const channelBtn = document.getElementById("mychannel");
+if (channelBtn) {
+  channelBtn.addEventListener("click", () => {
+    window.location.href = `channelPage.html?v=${data.data._id}`;
+  });
+} else {
+  console.warn("Button #mychannel not found.");
+}
+
         } catch(error){
             console.log(error)
             console.log("error while sending token")
