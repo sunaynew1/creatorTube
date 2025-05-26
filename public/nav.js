@@ -20,7 +20,11 @@ async function working(){
 
     const link = document.getElementById("mychannel")
     // console.log(btn)
-    link.href=`login.html`
+    // link.href=`login.html`
+
+    link.addEventListener("click", () => {
+        console.log("workinggggggg")
+    })
 
 
 
