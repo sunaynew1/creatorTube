@@ -53,7 +53,7 @@ window.onload = async () => {
  
         console.log(data.data._id)
 
-     
+      console.log(`channelPage.html?v=${data.data._id}`)
         document.getElementById("mychannel").href=`channelPage.html?v=${data.data._id}`
     
         console.log(data)
