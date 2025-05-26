@@ -29,14 +29,18 @@ async function userData() {
     }
 
     // ✅ Set channel link
-    const channelBtn = document.getElementById("mychannel");
-    if (channelBtn) {
-        channelBtn.href=`profile.html`
-    //   channelBtn.href = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
-      console.log("Channel button href set.");
-    } else {
-      console.warn("My Channel button not found.");
-    }
+    // const channelBtn = document.getElementById("mychannel");
+      console.log(data)
+  document.getElementById("mychannel").addEventListener("click" , () => {
+        window.location.href = `channelPage.html?v=${data.data._id}`
+      })
+    // if (channelBtn) {
+    //     channelBtn.href=`profile.html`
+    // //   channelBtn.href = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
+    //   console.log("Channel button href set.");
+    // } else {
+    //   console.warn("My Channel button not found.");
+    // }
 
   } catch (error) {
     console.error("Error loading dashboard:", error);
