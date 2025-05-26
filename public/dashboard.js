@@ -65,6 +65,7 @@ window.onload = async () => {
         console.log(`https://creator-tube-phi.vercel.app/channelPage.html?v=${data.data._id}`)
 
       const channelBtn = document.getElementById("mychannel");
+      console.log(channelBtn)
 if (channelBtn) {
   channelBtn.addEventListener("click", () => {
     window.location.href = `channelPage.html?v=${data.data._id}`;
