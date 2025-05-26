@@ -22,7 +22,7 @@ async function working(){
     const navbar = document.getElementById("channel_nav")
     // console.log(btn)
     // link.href=`login.html`
-
+//lll
     navbar.addEventListener("click", () => {
        window.location.href = `channelPage.html?v=${data.data._id}`
     })
