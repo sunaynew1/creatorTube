@@ -31,7 +31,8 @@ async function userData() {
     // ✅ Set channel link
     const channelBtn = document.getElementById("mychannel");
     if (channelBtn) {
-      channelBtn.href = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
+        channelBtn.href=`profile.html`
+    //   channelBtn.href = `https://creator-tube-phi.vercel.app/channelPage.html?v=${userId}`;
       console.log("Channel button href set.");
     } else {
       console.warn("My Channel button not found.");
