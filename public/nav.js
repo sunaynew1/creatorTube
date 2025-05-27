@@ -1,6 +1,6 @@
 async function userData() {
   try {
-    const res = await fetch("https://creator-tube-three.vercel.app//api/v1/users/dashboard", {
+    const res = await fetch("https://creator-tube-three.vercel.app/api/v1/users/dashboard", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", working);
 //       })
 //     // if (channelBtn) {
 //     //     channelBtn.href=`profile.html`
-//     // //   channelBtn.href = `https://creator-tube-three.vercel.app//channelPage.html?v=${userId}`;
+//     // //   channelBtn.href = `https://creator-tube-three.vercel.app/channelPage.html?v=${userId}`;
 //     //   console.log("Channel button href set.");
 //     // } else {
 //     //   console.warn("My Channel button not found.");
