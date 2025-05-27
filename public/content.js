@@ -1,7 +1,7 @@
 // Function to create a video card
  
 async function redirectWatch() {
-  const req = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/watch",{
+  const req = await fetch("https://creator-tube-three.vercel.app//api/v1/users/watch",{
     method:"POST",
     headers: {
         "Content-Type" : "application/json"
@@ -57,7 +57,7 @@ function createVideoCard({ id, publicId, title, views, description, thumbnailSrc
 // Fetch video data and render cards
 async function fetchVideos() {
   try {
-    const res = await fetch("https://creator-tube-phi.vercel.app/api/v1/users/content", {
+    const res = await fetch("https://creator-tube-three.vercel.app//api/v1/users/content", {
       headers: { "Content-Type": "application/json" },
     });
 
