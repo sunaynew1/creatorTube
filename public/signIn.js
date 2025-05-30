@@ -33,7 +33,7 @@ function showNotification(message, isError ) {
 
 document.getElementById("btn-signup").addEventListener("click", async () => {
     console.log("hola")
-    document.getElementById("Button").disabled = true;
+    document.getElementById("btn-signup").disabled = true;
     showNotification(data.message || "Wait registering User", false);
 const fullName =  document.getElementById("fullName").value   
 const email = document.getElementById("email").value
