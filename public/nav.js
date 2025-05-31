@@ -17,7 +17,7 @@ async function userData() {
 }
 
 async function working(){
-
+lucide.createIcons();
   const avatar= document.getElementById("avatar")
     const data = await userData()
 
