@@ -61,7 +61,7 @@ const coverImage = document.getElementById("coverUpload").files[0];
        
           if (req.ok) {
   showNotification(data.message || "Signed up successfully", false); // ✅ success = false
-  window.location.href = "dashboard.html";
+  window.location.href = "login.html";
 } else {
   showNotification(data.message || "error encountered", true); // ✅ error = true
 }
