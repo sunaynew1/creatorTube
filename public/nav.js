@@ -24,6 +24,10 @@ lucide.createIcons();
   })
     const data = await userData()
 
+   document.getElementById("logo").addEventListener("click" , () => {
+    window.location.href= "/dashboard"
+   })
+
 
     avatar.src=data.data.avatar
     const navbar = document.getElementById("channel_nav")
