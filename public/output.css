@@ -689,6 +689,14 @@ video {
   z-index: 50;
 }
 
+.m-\[\] {
+  margin: ;
+}
+
+.m-\[5px\] {
+  margin: 5px;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
