@@ -260,7 +260,7 @@ async function videoData() {
       hour: '2-digit',
       minute: '2-digit',
       hour12: true,
-      timeZone: 'UTC' // optional, keeps it in UTC time
+      timeZone: 'IST' // optional, keeps it in UTC time
     };
 
     const formatted = date.toLocaleString('en-US', options);
