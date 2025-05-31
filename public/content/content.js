@@ -78,7 +78,7 @@ async function fetchVideos() {
       card.style.cursor = 'pointer';
       card.addEventListener("click" , () =>{
         console.log(`card clicked video id: ${id}`)
-        window.location.href = `watchVideo.html?v=${id}`;
+        window.location.href = `/watchVideo?v=${id}`;
      })
       container.appendChild(card);
 
