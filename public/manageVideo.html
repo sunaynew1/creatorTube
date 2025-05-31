@@ -17,36 +17,84 @@
 </head>
 
 <body class="text-white min-h-screen bg-gradient-to-tl from-black to-slate-950 font-[Inter]">
-  <!-- Sidebar -->
-  <aside id="sidebar"
-    class="fixed inset-y-0 left-0 z-40 w-64 bg-zinc-900/10 border-r border-zinc-800 p-6 pt-[100px] transform -translate-x-full transition-transform duration-300 ease-in-out backdrop-blur-lg shadow-xl md:translate-x-0 md:static md:block">
-    <!-- Sidebar content here -->
-  </aside>
-
-  <!-- Sidebar Toggle Button (Mobile Only) -->
-  <button id="sidebarToggle"
-    class="fixed top-5 left-4 z-50 p-2 rounded-lg bg-zinc-800 border border-zinc-600 text-white hover:bg-zinc-700 md:hidden"
-    onclick="document.getElementById('sidebar').classList.toggle('-translate-x-full')">
-    <i data-lucide="menu" class="w-5 h-5"></i>
-  </button>
-
-  <!-- Navbar -->
-  <div class="md:ml-64">
-    <nav
-      class="fixed top-4 left-0 right-0 mx-4 md:mx-0 md:left-64 md:w-[calc(100%-256px)] rounded-full bg-white/10 backdrop-blur-lg shadow-xl px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between z-30 gap-2">
+   <nav class="bg-white border-gray-200 dark:bg-black/50 text-[12px] m-[5px] rounded-xl">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <div
-        class="text-xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
-        <i data-lucide="upload-cloud" class="w-6 h-6 text-pink-400"></i>
-        CreatorHub
+        class="text-2xl font-bold bg-gradient-to-r from-[#A100FF] to-[#FF0080] text-transparent bg-clip-text flex items-center gap-2">
+        <i data-lucide="upload-cloud" class="w-6 h-6 text-pink-400"></i> CreatorHub
       </div>
-      <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-gray-300 font-medium">
-        <a href="dashboard.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
-            data-lucide="home"></i> Home</a>
-        <a href="uploadFile.html" class="flex items-center gap-2 text-pink-400"><i data-lucide="upload"></i> Upload</a>
-        <a href="content.html" class="flex items-center gap-2 hover:text-pink-400 transition"><i
-            data-lucide="file-text"></i> Content</a>
+      <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button type="button"
+          class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+          id="user-menu-button" aria-expanded="false" data-dropdown-placement="bottom">
+          <span class="sr-only">Open user menu</span>
+          <img class="w-8 h-8 rounded-full" id="avatar">
+        </button>
+        <!-- Dropdown menu -->
+        <div
+          class="z-50 hidden my-4 text-[12px] list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm  dark:bg-black/30"
+          id="user-dropdown">
+          <div class="px-4 py-3">
+            <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+          </div>
+          <ul class="py-2" aria-labelledby="user-menu-button">
+            <li> <a href="dashboard.html"
+                class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+                  data-lucide="home"></i> Home</a></li>
+            <li> <a href="content.html"
+                class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+                  data-lucide="video"></i> Content</a></li>
+<li>
+   <a  id="channel_nav" href="#" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="home"></i> My Channel Page</a>
+</li>
+            <li><a href="watchHistory.html"
+                class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+                  data-lucide="history"></i> Watch History</a></li>
+            <li> <a href="uploadFile.html"
+                class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 rounded-lg p-4"><i
+                  data-lucide="upload"></i> Uploads</a></li>
+            <li> <a href="manageVideo.html"
+                class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+                  data-lucide="file-video"></i> Manage Videos</a></li>
+          </ul>
+        </div>
+        <button data-collapse-toggle="navbar-user" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-user" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
       </div>
-    </nav>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+        <ul
+          class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-bg-black/20 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-black/50 md:dark:bg-black/50 dark:border-bg-black/50">
+          <li> <a href="dashboard.html"
+              class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+                data-lucide="home"></i> Home</a></li>
+          <li> <a href="content.html"
+              class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i
+                data-lucide="video"></i> Content</a></li>
+       <li>
+  <a  id="channel_drop" href="#" class="flex items-center gap-3 hover:bg-white/5 p-4 rounded-lg hover:text-purple-400 transition"><i data-lucide="home"></i> My Channel Page</a>
+</li>
+        
+          <li><a href="watchHistory.html"
+              class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+                data-lucide="history"></i> Watch History</a></li>
+          <li> <a href="uploadFile.html"
+              class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 rounded-lg p-4"><i
+                data-lucide="upload"></i> Uploads</a></li>
+          <li> <a href="manageVideo.html"
+              class="flex items-center gap-3 hover:text-purple-400 transition hover:bg-white/10 p-4 rounded-lg"><i
+                data-lucide="file-video"></i> Manage Videos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <!-- Main Content -->
     <main
