@@ -780,6 +780,18 @@ video {
   margin-top: 50px;
 }
 
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mt-\[20\] {
+  margin-top: 20;
+}
+
+.mt-\[20px\] {
+  margin-top: 20px;
+}
+
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
