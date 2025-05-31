@@ -31,7 +31,7 @@ lucide.createIcons();
     // link.href=`login.html`
 //lll
     navbar.addEventListener("click", () => {
-       window.location.href = `channelPage.html?v=${data.data._id}`
+       window.location.href = `channelPage?v=${data.data._id}`
     })
 
     const dropdown = document.getElementById("channel_drop")
