@@ -17,8 +17,12 @@ async function userData() {
 }
 
 async function working(){
+
+  const avatar= document.getElementById("avatar")
     const data = await userData()
 
+
+    avatar.src=data.data.avatar
     const navbar = document.getElementById("channel_nav")
     // console.log(btn)
     // link.href=`login.html`
