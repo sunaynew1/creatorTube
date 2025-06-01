@@ -342,6 +342,12 @@ async function videoData() {
 
     })
 
+    document.getElementById("btn-download").addEventListener("click" , () => {
+        
+      document.getElementById("btn-download").href=`https://res.cloudinary.com/dvz27jtw8/video/upload/fl_attachment:${data.data.videoTitle}/${videoPublicId}.mp4`
+       
+    })
+
     btn_like.addEventListener("click", async () => {
       let count = await like(videoId)
       console.log(count.data.likesCount)
