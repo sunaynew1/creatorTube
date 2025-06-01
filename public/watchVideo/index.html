@@ -155,17 +155,18 @@
     </section>
   </main>
 <!-- Share Modal -->
-<div id="shareModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+<div id="shareModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center">
   <div class="bg-white text-black p-6 rounded-xl shadow-xl w-[90%] max-w-md relative">
-    <button id="closeShareModal" class="absolute top-2 right-2 text-black hover:text-red-500">&times;</button>
+    <button id="closeShareModal" class="absolute top-2 right-2 text-black text-xl hover:text-red-500">&times;</button>
     <h2 class="text-lg font-semibold mb-4">Share this video</h2>
     <div class="flex gap-2">
       <input type="text" id="shareLink" readonly class="flex-1 border border-gray-300 px-3 py-2 rounded-md" />
       <button id="copyShareLink" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">Copy</button>
     </div>
-    <p id="copyMessage" class="text-sm text-green-600 mt-2 hidden">Link copied to clipboard!</p>
+    <p id="copyMessage" class="text-sm text-green-600 mt-2 hidden">Link copied!</p>
   </div>
 </div>
+
   <script src="/watchVideo/watchVideo.js"></script>
   <script src="nav.js"></script>
 </body>

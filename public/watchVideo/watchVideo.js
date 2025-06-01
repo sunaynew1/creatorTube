@@ -342,25 +342,30 @@ async function videoData() {
         console.log("post clicked")
       }
       
-document.getElementById('openShareModal').addEventListener('click', () => {
-  const videoURL = window.location.href;
-  document.getElementById('shareLink').value = videoURL;
-  document.getElementById('shareModal').classList.remove('hidden');
-  document.getElementById('copyMessage').classList.add('hidden');
-});
+  const openShareModalBtn = document.getElementById('openShareModal');
+  const closeShareModalBtn = document.getElementById('closeShareModal');
+  const shareModal = document.getElementById('shareModal');
+  const shareLink = document.getElementById('shareLink');
+  const copyBtn = document.getElementById('copyShareLink');
+  const copyMsg = document.getElementById('copyMessage');
 
-document.getElementById('closeShareModal').addEventListener('click', () => {
-  document.getElementById('shareModal').classList.add('hidden');
-});
-
-document.getElementById('copyShareLink').addEventListener('click', () => {
-  const input = document.getElementById('shareLink');
-  input.select();
-  input.setSelectionRange(0, 99999); // For mobile devices
-  navigator.clipboard.writeText(input.value).then(() => {
-    document.getElementById('copyMessage').classList.remove('hidden');
+  openShareModalBtn.addEventListener('click', () => {
+    shareLink.value = window.location.href;
+    shareModal.classList.remove('hidden');
+    copyMsg.classList.add('hidden');
   });
-});
+
+  closeShareModalBtn.addEventListener('click', () => {
+    shareModal.classList.add('hidden');
+  });
+
+  copyBtn.addEventListener('click', () => {
+    shareLink.select();
+    shareLink.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(shareLink.value).then(() => {
+      copyMsg.classList.remove('hidden');
+    });
+  });
 
 
     })
