@@ -342,30 +342,7 @@ async function videoData() {
         console.log("post clicked")
       }
       
-  const openShareModalBtn = document.getElementById('openShareModal');
-  const closeShareModalBtn = document.getElementById('closeShareModal');
-  const shareModal = document.getElementById('shareModal');
-  const shareLink = document.getElementById('shareLink');
-  const copyBtn = document.getElementById('copyShareLink');
-  const copyMsg = document.getElementById('copyMessage');
-
-  openShareModalBtn.addEventListener('click', () => {
-    shareLink.value = window.location.href;
-    shareModal.classList.remove('hidden');
-    copyMsg.classList.add('hidden');
-  });
-
-  closeShareModalBtn.addEventListener('click', () => {
-    shareModal.classList.add('hidden');
-  });
-
-  copyBtn.addEventListener('click', () => {
-    shareLink.select();
-    shareLink.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(shareLink.value).then(() => {
-      copyMsg.classList.remove('hidden');
-    });
-  });
+ 
 
 
     })
@@ -453,7 +430,13 @@ async function videoData() {
 
 // Load your video by public ID
 
-
+document.getElementById("btn-share").addEventListener("click" , () => {
+   const url = window.location.href
+   console.log(url)
+    navigator.clipboard.writeText(url);
+    alert("Url copied ");
+   
+})
 
 window.addEventListener("DOMContentLoaded", () => {
   videoData(); // now it runs after HTML is ready

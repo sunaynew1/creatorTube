@@ -109,16 +109,11 @@
       <div class="flex gap-4 mt-4 sm:mt-0 flex-wrap">
         <button id="btn-like" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="thumbs-up" class="w-4 h-4"></i><span id="likeCount">0</span></button>
         <button id="btn-dislike" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="thumbs-down" class="w-4 h-4"></i><span id="dislikeCount">0</span></button>
-<button id="openShareModal" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition">
-  <i data-lucide="share-2" class="w-4 h-4"></i>Share
-</button>
+        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition" id="btn-share"><i data-lucide="share-2" class="w-4 h-4"></i>Share</button>
         <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition" ><i data-lucide="download" class="w-4 h-4"></i><a id="btn-download" download>Download</a></button>
         <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="bookmark" class="w-4 h-4"></i>Save</button>
       </div>
     </div>
-
- 
-
 
     <!-- Channel Info -->
     <div class="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl p-4 shadow-md">
@@ -154,18 +149,6 @@
       <div id="commentsContainer" class="space-y-4"></div>
     </section>
   </main>
-<!-- Share Modal -->
-<div id="shareModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center">
-  <div class="bg-white text-black p-6 rounded-xl shadow-xl w-[90%] max-w-md relative">
-    <button id="closeShareModal" class="absolute top-2 right-2 text-black text-xl hover:text-red-500">&times;</button>
-    <h2 class="text-lg font-semibold mb-4">Share this video</h2>
-    <div class="flex gap-2">
-      <input type="text" id="shareLink" readonly class="flex-1 border border-gray-300 px-3 py-2 rounded-md" />
-      <button id="copyShareLink" class="bg-pink-600 text-white px-4 py-2 rounded-md hover:bg-pink-700">Copy</button>
-    </div>
-    <p id="copyMessage" class="text-sm text-green-600 mt-2 hidden">Link copied!</p>
-  </div>
-</div>
 
   <script src="/watchVideo/watchVideo.js"></script>
   <script src="nav.js"></script>
