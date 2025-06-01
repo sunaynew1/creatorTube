@@ -27,10 +27,10 @@ lucide.createIcons();
   })
     const data = await userData()
 
-  //  document.getElementById("logo").style.cursor="pointer" 
-   document.getElementById("logo").addEventListener("click" , () => {
-    window.location.href= "/dashboard"
-   })
+  // //  document.getElementById("logo").style.cursor="pointer" 
+  //  document.getElementById("logo").addEventListener("click" , () => {
+  //   window.location.href= "/dashboard"
+  //  })
 
   console.log(`avatar url : ${data.data.avatar}`)
     avatar.src=data.data.avatar
