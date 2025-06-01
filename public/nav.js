@@ -20,8 +20,8 @@ async function working(){
 lucide.createIcons();
 
   const avatar= document.getElementById("avatar")
-  console.log(`avatar url : ${avatar}`)
-  avatar.src=avatar
+
+ 
   avatar.addEventListener("click", () =>{
     window.location.href="/profile"
   })
@@ -32,7 +32,7 @@ lucide.createIcons();
     window.location.href= "/dashboard"
    })
 
-
+  console.log(`avatar url : ${data.data.avatar}`)
     avatar.src=data.data.avatar
     const navbar = document.getElementById("channel_nav")
     // console.log(btn)
