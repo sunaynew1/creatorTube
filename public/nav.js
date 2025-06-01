@@ -18,7 +18,10 @@ async function userData() {
 
 async function working(){
 lucide.createIcons();
+
   const avatar= document.getElementById("avatar")
+  console.log(`avatar url : ${avatar}`)
+  avatar.src=avatar
   avatar.addEventListener("click", () =>{
     window.location.href="/profile"
   })
