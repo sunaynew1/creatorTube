@@ -281,7 +281,7 @@ async function videoData() {
     channelName.style.cursor = "pointer"
     channelName.addEventListener("click", async () => {
       console.log("name clicked")
-      window.location.href = `channelPage.html?v=${data.data.owner._id}`
+      window.location.href = `/channelPage?v=${data.data.owner._id}`
     })
     console.log(data)
     const videoPublicId = data.data.videoPublicId;

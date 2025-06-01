@@ -31,6 +31,7 @@ function showNotification(message, isError = false) {
 }
 document.getElementById("btn-upload").addEventListener("click", async () => {
   
+  document.getElementById("btn-upload").disabled=true
   
   const videoTitle = document.getElementById("videoTitle").value;
     const description = document.getElementById("description").value;
