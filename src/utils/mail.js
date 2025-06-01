@@ -34,7 +34,7 @@ Thank you for signing up on our platform!
 
 To complete your registration, please verify your email address by clicking the link below:
 
-http://localhost:3004/api/v1/users/verifyToken?token=${token}
+http://creator-tube-three.vercel.app/api/v1/users/verifyToken?token=${token}
 
 If you did not make this request, you can safely ignore this email.
 
