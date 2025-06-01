@@ -265,7 +265,8 @@ async function videoData() {
 
     const formatted = date.toLocaleString('en-US', options);
     console.log(formatted);
-
+ 
+    document.getElementById("btn-download").href=`https://res.cloudinary.com/dvz27jtw8/video/upload/fl_attachment:${data.data.videoTitle}/${videoPublicId}.mp4`
 
     videoTitlex.textContent = data.data.videoTitle
     channelName.textContent = data.data.owner.username
@@ -342,11 +343,11 @@ async function videoData() {
 
     })
 
-    document.getElementById("btn-download").addEventListener("click" , () => {
-        console.log("download clicked")
-      document.getElementById("btn-download").href=`https://res.cloudinary.com/dvz27jtw8/video/upload/fl_attachment:${data.data.videoTitle}/${videoPublicId}.mp4`
+    // document.getElementById("btn-download").addEventListener("click" , () => {
+    //     console.log("download clicked")
       
-    })
+      
+    // })
 
     btn_like.addEventListener("click", async () => {
       let count = await like(videoId)
