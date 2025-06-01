@@ -342,6 +342,40 @@ async function videoData() {
         console.log("post clicked")
       }
 
+      const shareBtn = document.querySelector('[data-lucide="share-2"]')?.parentElement;
+const shareModal = document.getElementById("shareModal");
+const closeShareModal = document.getElementById("closeShareModal");
+const copyLinkButton = document.getElementById("copyLinkButton");
+const videoShareLink = document.getElementById("videoShareLink");
+
+// Replace with your own logic to get current video URL
+const videoUrl = window.location.href;
+
+// Set input value to current video URL
+videoShareLink.value = videoUrl;
+
+// Open modal
+shareBtn?.addEventListener("click", () => {
+  shareModal.classList.remove("hidden");
+});
+
+// Close modal
+closeShareModal?.addEventListener("click", () => {
+  shareModal.classList.add("hidden");
+});
+
+// Copy to clipboard
+copyLinkButton?.addEventListener("click", () => {
+  videoShareLink.select();
+  navigator.clipboard.writeText(videoShareLink.value).then(() => {
+    copyLinkButton.textContent = "Copied!";
+    setTimeout(() => {
+      copyLinkButton.textContent = "Copy";
+    }, 1500);
+  });
+});
+
+
     })
 
     // document.getElementById("btn-download").addEventListener("click" , () => {
