@@ -129,6 +129,20 @@ async function registerView() {
 
   })
 }
+  async function saveVideo() {
+ 
+      const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/saveVideo", {
+        method : "POST",
+        header:{
+          "Content-Type" : "application/json"
+        },
+        credentials: "include",
+        body:JSON.stringify({videoId})
+      }) 
+    const data = req.json()
+    return data;
+    }
+
 async function videoData() {
   try {
     const videoTitlex = document.getElementById("videoTitle")
@@ -155,6 +169,8 @@ async function videoData() {
       body: JSON.stringify({ videoId })
 
     })
+
+  
 
     const reqUserData = await fetch("https://creator-tube-three.vercel.app/api/v1/users/userInfo", {
 
@@ -428,6 +444,7 @@ async function videoData() {
 }
 
 
+
 // Load your video by public ID
 
 document.getElementById("btn-share").addEventListener("click" , () => {
@@ -436,6 +453,12 @@ document.getElementById("btn-share").addEventListener("click" , () => {
     navigator.clipboard.writeText(url);
     alert("Url copied ");
    
+})
+
+document.getElementById("btn-save").addEventListener("click", async () => {
+      
+  const d= await saveVideo(videoId);
+  alert(d.message)
 })
 
 window.addEventListener("DOMContentLoaded", () => {
