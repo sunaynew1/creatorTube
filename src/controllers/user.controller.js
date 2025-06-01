@@ -971,6 +971,19 @@ const Authorization = asyncHandler(async(req,res) => {
         return res.status(400).json(new ApiResponse(400,"not authorized","failed"))
     }
 })
+
+const saveVideo = asyncHandler(async(req,res) => {
+    const token =  req.cookies.accessToken
+    const user =  await User.findOne({accessToken: token})
+    const videoId = req.body.videoId 
+
+    user.saved.push({
+        videoId:videoId
+    })
+    await user.save();
+    return res.status(200).json(new ApiResponse(200,"Saved Successfully!"))
+})
+
 export {
     registerUser,
     loginUser,
@@ -1005,7 +1018,8 @@ export {
     views,
     onlyId,
     subscribeCheck,
-    Authorization
+    Authorization,
+    saveVideo
     // newComment
 
 };

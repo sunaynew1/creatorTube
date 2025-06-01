@@ -67,6 +67,12 @@ const userSchema = new Schema({
         ref: "video",
     }
     }],
+    saved: [{
+        videoId:{
+        type: Schema.Types.ObjectId,
+        ref: "video",
+    }
+    }],
     myVideos: [{
         videoId: { type: mongoose.Schema.Types.ObjectId, ref: 'Video' }
     }],
