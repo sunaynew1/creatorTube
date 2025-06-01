@@ -130,7 +130,7 @@ async function registerView() {
   })
 }
   async function saveVideo() {
- 
+   try{
       const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/saveVideo", {
         method : "POST",
         header:{
@@ -142,6 +142,9 @@ async function registerView() {
     const data = req.json()
     return data;
     }
+  catch(error){
+ console.log(`save error ${error}`)
+  }
 
 async function videoData() {
   try {
