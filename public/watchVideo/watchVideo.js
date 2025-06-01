@@ -266,7 +266,7 @@ async function videoData() {
     const formatted = date.toLocaleString('en-US', options);
     console.log(formatted);
  
-    document.getElementById("btn-download").href=`https://res.cloudinary.com/dvz27jtw8/video/upload/fl_attachment:${data.data.videoTitle}/${videoPublicId}.mp4`
+   
 
     videoTitlex.textContent = data.data.videoTitle
     channelName.textContent = data.data.owner.username
@@ -290,6 +290,7 @@ async function videoData() {
 
     console.log(typeof videoPublicId);
 
+ document.getElementById("btn-download").href=`https://res.cloudinary.com/dvz27jtw8/video/upload/fl_attachment:${data.data.videoTitle}/${videoPublicId}.mp4`
 
     cld.videoPlayer("my-video", {
       publicId: videoPublicId,
