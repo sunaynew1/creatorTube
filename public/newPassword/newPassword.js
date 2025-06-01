@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const token = params.get('u')
+const token = params.get('token')
 
 async function fetchData(newPassword){
     
