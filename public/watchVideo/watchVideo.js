@@ -145,6 +145,7 @@ async function registerView() {
   catch(error){
  console.log(`save error ${error}`)
   }
+}
 
 async function videoData() {
   try {
