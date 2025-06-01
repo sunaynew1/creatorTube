@@ -342,31 +342,24 @@ async function videoData() {
         console.log("post clicked")
       }
       
-      const shareBtn = document.getElementById("btn-share");
-const shareModal = document.getElementById("shareModal");
-const closeShareModal = document.getElementById("closeShareModal");
-const copyBtn = document.getElementById("copyLinkBtn");
-const shareInput = document.getElementById("shareLink");
-
-// Replace with your actual URL logic
-const currentUrl = window.location.href;
-
-// Open Modal
-shareBtn.addEventListener("click", () => {
-  shareInput.value = currentUrl;
-  shareModal.classList.remove("hidden");
+document.getElementById('openShareModal').addEventListener('click', () => {
+  const videoURL = window.location.href;
+  document.getElementById('shareLink').value = videoURL;
+  document.getElementById('shareModal').classList.remove('hidden');
+  document.getElementById('copyMessage').classList.add('hidden');
 });
 
-// Close Modal
-closeShareModal.addEventListener("click", () => {
-  shareModal.classList.add("hidden");
+document.getElementById('closeShareModal').addEventListener('click', () => {
+  document.getElementById('shareModal').classList.add('hidden');
 });
 
-// Copy to Clipboard
-copyBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(shareInput.value);
-  copyBtn.innerText = "Copied!";
-  setTimeout(() => (copyBtn.innerText = "Copy"), 2000);
+document.getElementById('copyShareLink').addEventListener('click', () => {
+  const input = document.getElementById('shareLink');
+  input.select();
+  input.setSelectionRange(0, 99999); // For mobile devices
+  navigator.clipboard.writeText(input.value).then(() => {
+    document.getElementById('copyMessage').classList.remove('hidden');
+  });
 });
 
 
