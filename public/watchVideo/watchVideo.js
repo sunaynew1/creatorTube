@@ -341,38 +341,32 @@ async function videoData() {
 
         console.log("post clicked")
       }
-
-      const shareBtn = document.querySelector('[data-lucide="share-2"]')?.parentElement;
+      
+      const shareBtn = document.getElementById("btn-share");
 const shareModal = document.getElementById("shareModal");
 const closeShareModal = document.getElementById("closeShareModal");
-const copyLinkButton = document.getElementById("copyLinkButton");
-const videoShareLink = document.getElementById("videoShareLink");
+const copyBtn = document.getElementById("copyLinkBtn");
+const shareInput = document.getElementById("shareLink");
 
-// Replace with your own logic to get current video URL
-const videoUrl = window.location.href;
+// Replace with your actual URL logic
+const currentUrl = window.location.href;
 
-// Set input value to current video URL
-videoShareLink.value = videoUrl;
-
-// Open modal
-shareBtn?.addEventListener("click", () => {
+// Open Modal
+shareBtn.addEventListener("click", () => {
+  shareInput.value = currentUrl;
   shareModal.classList.remove("hidden");
 });
 
-// Close modal
-closeShareModal?.addEventListener("click", () => {
+// Close Modal
+closeShareModal.addEventListener("click", () => {
   shareModal.classList.add("hidden");
 });
 
-// Copy to clipboard
-copyLinkButton?.addEventListener("click", () => {
-  videoShareLink.select();
-  navigator.clipboard.writeText(videoShareLink.value).then(() => {
-    copyLinkButton.textContent = "Copied!";
-    setTimeout(() => {
-      copyLinkButton.textContent = "Copy";
-    }, 1500);
-  });
+// Copy to Clipboard
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(shareInput.value);
+  copyBtn.innerText = "Copied!";
+  setTimeout(() => (copyBtn.innerText = "Copy"), 2000);
 });
 
 

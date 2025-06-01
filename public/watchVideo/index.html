@@ -109,7 +109,10 @@
       <div class="flex gap-4 mt-4 sm:mt-0 flex-wrap">
         <button id="btn-like" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="thumbs-up" class="w-4 h-4"></i><span id="likeCount">0</span></button>
         <button id="btn-dislike" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="thumbs-down" class="w-4 h-4"></i><span id="dislikeCount">0</span></button>
-        <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="share-2" class="w-4 h-4"></i>Share</button>
+<!-- Share Button -->
+<button id="btn-share" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition">
+  <i data-lucide="share-2" class="w-4 h-4"></i>Share
+</button>
         <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition" ><i data-lucide="download" class="w-4 h-4"></i><a id="btn-download" download>Download</a></button>
         <button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-sm hover:bg-white/10 transition"><i data-lucide="bookmark" class="w-4 h-4"></i>Save</button>
       </div>
@@ -152,26 +155,15 @@
       <div id="commentsContainer" class="space-y-4"></div>
     </section>
   </main>
-   <!-- Share Modal -->
+<!-- Share Modal -->
 <div id="shareModal" class="fixed inset-0 z-50 bg-black/70 hidden items-center justify-center">
-  <div class="bg-black text-white rounded-xl p-6 max-w-md w-full shadow-lg border border-white/10 relative">
+  <div class="bg-black text-white border border-white/10 rounded-xl p-6 max-w-md w-full shadow-xl relative">
     <h3 class="text-lg font-semibold mb-4">Share this video</h3>
-    
-    <div class="flex items-center gap-2">
-      <input
-        id="videoShareLink"
-        type="text"
-        readonly
-        class="flex-1 px-3 py-2 rounded-lg bg-gray-800 text-white border border-white/10 focus:outline-none"
-      />
-      <button id="copyLinkButton" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-md text-sm">
-        Copy
-      </button>
+    <div class="flex gap-2">
+      <input id="shareLink" type="text" readonly class="flex-1 bg-gray-800 border border-white/10 p-2 rounded-lg text-sm" />
+      <button id="copyLinkBtn" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg text-sm">Copy</button>
     </div>
-
-    <button id="closeShareModal" class="absolute top-3 right-3 text-gray-400 hover:text-white">
-      ✕
-    </button>
+    <button id="closeShareModal" class="absolute top-3 right-3 text-gray-400 hover:text-white">✕</button>
   </div>
 </div>
 
