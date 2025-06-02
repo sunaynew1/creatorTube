@@ -980,7 +980,7 @@ const saveVideo = asyncHandler(async(req,res) => {
 
      if(idCheck == true){
 
-        user.saved = user.saved.filter(save => save.videoId?.toString() !== videoId)
+        user.saved = user.saved.filter(save => save.videoId?.toString() !== videoId.toString())
         console.log("save removed")
         return res.status(200).json(new ApiResponse(200,"","Saved removed Successfully!"))
      }   else{
