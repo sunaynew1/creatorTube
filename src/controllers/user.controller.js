@@ -1038,6 +1038,7 @@ export {
     subscribeCheck,
     Authorization,
     saveVideo,
+    history
     
     // newComment
 
