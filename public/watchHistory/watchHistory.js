@@ -2,11 +2,11 @@ console.log("dsdsgsdfsdfdf")
 async function userDetails() {
     try {
         const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/history", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            credentials: "include"
+  method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
         });
 
         const data = await req.json(); // <-- missing 'await' fixed here
