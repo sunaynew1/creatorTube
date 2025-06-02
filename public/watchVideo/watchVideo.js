@@ -133,7 +133,7 @@ async function registerView() {
    try{
       const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/saveVideo", {
         method : "POST",
-        header:{
+        headers:{
           "Content-Type" : "application/json"
         },
         credentials: "include",
