@@ -8,7 +8,7 @@ async function userDetails() {
             },
             credentials:"include"
         })
-        const data = req.json
+        const data = req.json()
         return data
     }catch(error){
         console.log(error)
