@@ -463,6 +463,11 @@ document.getElementById("btn-save").addEventListener("click", async () => {
       
   const d= await saveVideo(videoId);
   alert(d.message)
+  if(d.message == "Saved Successfully!"){
+    document.getElementById("btn-save").classList.add="bg-white/10"
+  }else{
+    document.getElementById("btn-save").classList.remove="bg-white/10"
+  }
 })
 
 window.addEventListener("DOMContentLoaded", () => {
