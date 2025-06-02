@@ -976,20 +976,22 @@ const saveVideo = asyncHandler(async(req,res) => {
     const token =  req.cookies.accessToken
     const user =  await User.findOne({accessToken: token})
     const videoId = req.body.videoId 
-   const idCheck = User.findOne({videoId : videoId})
+   const idCheck = user.saved.some(save => save.videoId?.toString() === videoId)
 
      if(idCheck == true){
 
-        console.log("present")
+        user.saved = user.saved.filter(save => save.videoId?.toString() !== videoId)
+        console.log("save removed")
+        return res.status(200).json(new ApiResponse(200,"","Saved removed Successfully!"))
      }   else{
-        console.log("not present")
-     }
-
-    user.saved.push({
+        user.saved.push({
         videoId:videoId
     })
     await user.save();
-    return res.status(200).json(new ApiResponse(200,"Saved Successfully!"))
+    return res.status(200).json(new ApiResponse(200,"","Saved Successfully!"))
+     }
+
+   
 })
 
 export {
