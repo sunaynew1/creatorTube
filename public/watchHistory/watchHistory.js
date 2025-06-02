@@ -1,19 +1,21 @@
 console.log("dsdsgsdfsdfdf")
 async function userDetails() {
     try {
-        const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/history",{
-            method:"POST",
+        const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/history", {
+            method: "POST",
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
-            credentials:"include"
-        })
-        const data = req.json()
-        return data
-    }catch(error){
-        console.log(error)
+            credentials: "include"
+        });
+
+        const data = await req.json(); // <-- missing 'await' fixed here
+        return data;
+    } catch (error) {
+        console.log("Error fetching user details:", error);
     }
 }
+
 console.log("reached here watch history")
 console.log(userDetails())
 
