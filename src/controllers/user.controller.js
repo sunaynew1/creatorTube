@@ -995,6 +995,13 @@ const saveVideo = asyncHandler(async(req,res) => {
    
 })
 
+const history =asyncHandler(async(req,res) => {
+    const token = req.cookies.token
+    const user = await User.findOne({accessToken : token})
+
+    return req.status(200).json(new ApiResponse(200,user.select("watchHistory")))
+})
+
 export {
     registerUser,
     loginUser,
@@ -1030,7 +1037,8 @@ export {
     onlyId,
     subscribeCheck,
     Authorization,
-    saveVideo
+    saveVideo,
+    
     // newComment
 
 };
