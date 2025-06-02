@@ -17,7 +17,13 @@ async function userDetails() {
 }
 
 console.log("reached here watch history")
-console.log(userDetails())
+
+async function a (){
+    const d=  await userDetails()
+    console.log(d)
+}
+
+a();
 
     // const historyGrid = document.getElementById("historyGrid");
 
