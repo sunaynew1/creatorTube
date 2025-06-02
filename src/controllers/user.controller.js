@@ -996,7 +996,7 @@ const saveVideo = asyncHandler(async(req,res) => {
 })
 
 const history =asyncHandler(async(req,res) => {
-    const token = req.cookies.token
+    const token = req.cookies.accessToken
     const user = await User.findOne({accessToken : token})
 
     return res.status(200).json(new ApiResponse(200,user))
