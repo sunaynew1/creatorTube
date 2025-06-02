@@ -976,6 +976,14 @@ const saveVideo = asyncHandler(async(req,res) => {
     const token =  req.cookies.accessToken
     const user =  await User.findOne({accessToken: token})
     const videoId = req.body.videoId 
+   const idCheck = User.findOne({videoId : videoId})
+
+     if(idCheck == true){
+
+        console.log("present")
+     }   else{
+        console.log("not present")
+     }
 
     user.saved.push({
         videoId:videoId
