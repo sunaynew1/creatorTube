@@ -53,7 +53,7 @@ data.data.watchHistory.forEach(video => {
 
 }
 
-document.addEventListener("DOMContentLoaded", a());
+document.addEventListener("DOMContentLoaded", videoCard());
 
     // const historyGrid = document.getElementById("historyGrid");
 
