@@ -18,9 +18,39 @@ async function watchHistory() {
 
 console.log("reached here watch history")
 
-async function a (){
-    const d=  await watchHistory()
-    console.log(d)
+async function videoCard (){
+    const data=  await watchHistory()
+data.data.watchHistory.forEach(video => {
+      const card = document.createElement("div");
+      card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
+
+      card.innerHTML = `
+        <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-white line-clamp-2">${video.videoTitle}</h3>
+          <p class="text-sm text-zinc-400">${video.owner.username}</p>
+          <p class="text-xs text-zinc-500">${video.time}</p>
+        </div>
+      `;
+      historyGrid.appendChild(card);
+    });
+
+    // Sidebar toggle
+    let isSidebarOpen = false;
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('sidebarToggle');
+
+    toggleBtn.addEventListener('click', () => {
+      isSidebarOpen = !isSidebarOpen;
+      sidebar.classList.toggle('-translate-x-full');
+      toggleBtn.innerHTML = isSidebarOpen
+        ? '<i data-lucide="x" class="w-5 h-5 text-white"></i>'
+        : '<i data-lucide="menu" class="w-5 h-5 text-white"></i>';
+      lucide.createIcons();
+    });
+
+    lucide.createIcons();
+
 }
 
 document.addEventListener("DOMContentLoaded", a());
@@ -48,33 +78,4 @@ document.addEventListener("DOMContentLoaded", a());
     //   }
     // ];
 
-    // watchHistory.forEach(video => {
-    //   const card = document.createElement("div");
-    //   card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
-
-    //   card.innerHTML = `
-    //     <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-48 object-cover" />
-    //     <div class="p-4">
-    //       <h3 class="text-lg font-semibold text-white line-clamp-2">${video.title}</h3>
-    //       <p class="text-sm text-zinc-400">${video.channel}</p>
-    //       <p class="text-xs text-zinc-500">${video.time}</p>
-    //     </div>
-    //   `;
-    //   historyGrid.appendChild(card);
-    // });
-
-    // // Sidebar toggle
-    // let isSidebarOpen = false;
-    // const sidebar = document.getElementById('sidebar');
-    // const toggleBtn = document.getElementById('sidebarToggle');
-
-    // toggleBtn.addEventListener('click', () => {
-    //   isSidebarOpen = !isSidebarOpen;
-    //   sidebar.classList.toggle('-translate-x-full');
-    //   toggleBtn.innerHTML = isSidebarOpen
-    //     ? '<i data-lucide="x" class="w-5 h-5 text-white"></i>'
-    //     : '<i data-lucide="menu" class="w-5 h-5 text-white"></i>';
-    //   lucide.createIcons();
-    // });
-
-    // lucide.createIcons();
+    
