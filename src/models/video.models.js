@@ -26,7 +26,7 @@ const videoSchema = new Schema({
    duration :{
       type:Number,
       set: val => Math.floor(val),
-      default:"0"
+      default:0
    },
 
    views: {
