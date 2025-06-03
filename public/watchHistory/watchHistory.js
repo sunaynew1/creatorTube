@@ -25,7 +25,7 @@ console.log("reached here watch history")
     data.forEach(v => {
         const videoId = v.videoId 
         const card = document.createElement("div");
-         card.id=v.videoId
+         card.id=videoId
         card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
 
         card.innerHTML = `
