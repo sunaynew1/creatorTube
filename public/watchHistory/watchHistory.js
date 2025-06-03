@@ -24,7 +24,7 @@ async function a (){
     console.log(d)
 }
 
-a();
+document.addEventListener("DOMContentLoaded", a());
 
     // const historyGrid = document.getElementById("historyGrid");
 
