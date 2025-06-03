@@ -1000,8 +1000,8 @@ const history =asyncHandler(async(req,res) => {
     // return res.status(200).json(new ApiResponse(200,"history reached"))
     const token = await req.cookies.accessToken
     // const user = await User.findOne({accessToken : token})
-    const user =  await User.findOne({accessToken: token})
-    const data = user.select(`watchHistory`).populate(`watchHistory.videoId`)
+    const user =  await User.findOne({accessToken: token}).select(`watchHistory`).populate(`watchHistory.videoId`)
+    const data = user
     console.log(`watch history data  : ${data}`)
     res.status(200).json(new ApiResponse(200,user))
     // return res.status(200).json(new ApiResponse(200,user))
