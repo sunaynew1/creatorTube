@@ -10,7 +10,7 @@ async function watchHistory() {
     });
 
     const data = await res.json();
-
+      return data
   } catch (error) {
     console.log(`Watch History error: ${error}`);
   }
