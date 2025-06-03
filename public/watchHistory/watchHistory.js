@@ -20,22 +20,22 @@ console.log("reached here watch history")
 
     async function videoCard (){
         const data=  await watchHistory()
-        console.log(`watch history data frontend s: ${data.videoId}`)
-    // data.data.watchHistory.forEach(v => {
-    //     const video = v.videoId
-    //     const card = document.createElement("div");
-    //     card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
+        console.log(`watch history data frontend s: ${data}`)
+    data.forEach(videoId => {
+        
+        const card = document.createElement("div");
+        card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
 
-    //     card.innerHTML = `
-    //         <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-48 object-cover" />
-    //         <div class="p-4">
-    //         <h3 class="text-lg font-semibold text-white line-clamp-2">${video.videoTitle}</h3>
-    //         <p class="text-sm text-zinc-400">${video.owner.username}</p>
-    //         <p class="text-xs text-zinc-500">${video.time}</p>
-    //         </div>
-    //     `;
-    //     historyGrid.appendChild(card);
-    //     });
+        card.innerHTML = `
+            <img src="${videoId.thumbnail}" alt="${videoId.title}" class="w-full h-48 object-cover" />
+            <div class="p-4">
+            <h3 class="text-lg font-semibold text-white line-clamp-2">${videoId.videoIdTitle}</h3>
+            <p class="text-sm text-zinc-400">${videoId.owner.username}</p>
+            <p class="text-xs text-zinc-500">${videoId.time}</p>
+            </div>
+        `;
+        historyGrid.appendChild(card);
+        });
 
     // Sidebar toggle
     let isSidebarOpen = false;
