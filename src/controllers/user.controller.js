@@ -1006,7 +1006,7 @@ const history =asyncHandler(async(req,res) => {
         select: 'videoTitle thumbnail timestamps owner',
         populate:{
             path: "owner",
-            populate: "username"
+            select: "username"
         }   
     })
     const data = user
