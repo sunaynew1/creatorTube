@@ -20,7 +20,7 @@ console.log("reached here watch history")
 
     async function videoCard (){
         const data=  await watchHistory()
-        console.log(`watch history data frontend s: ${data.data.watchHistory}`)
+        console.log(`watch history data frontend s: ${data.watchHistory}`)
     // data.data.watchHistory.forEach(v => {
     //     const video = v.videoId
     //     const card = document.createElement("div");
