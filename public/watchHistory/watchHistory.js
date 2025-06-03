@@ -38,7 +38,7 @@ console.log("reached here watch history")
         `;
         historyGrid.appendChild(card);
         card.addEventListener("click" ,() => {
-            window.location.href=`/watchVideo?v=${data.videoId}`
+            window.location.href=`/watchVideo?v=${videoId._id}`
         })
         });
         
