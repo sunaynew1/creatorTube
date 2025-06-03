@@ -471,12 +471,12 @@ const uploadVideo = asyncHandler(async (req, res) => {
 
         if(duration>3600){
               duration= ((duration)/3600)
-              durationstr = `${duration}hour`
+              durationstr = `${duration} hour`
         }else if(duration>60){
                  duration= ((duration)/60)
-              durationstr = `${duration}minutes`
+              durationstr = `${duration} minutes`
         }else{
-              durationstr = `${duration}seconds`
+              durationstr = `${duration} seconds`
         }
         console.log(`duration of the video : ${typeof(duration)}`)
     } catch (error) {
