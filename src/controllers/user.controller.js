@@ -1002,6 +1002,7 @@ const history =asyncHandler(async(req,res) => {
     // const user = await User.findOne({accessToken : token})
     const user =  await User.findOne({accessToken: token})
     const data = user.select(`watchHistory`).populate(`watchHistory.videoId`)
+    console.log(`watch history data  : ${data}`)
     res.status(200).json(new ApiResponse(200,data))
     // return res.status(200).json(new ApiResponse(200,user))
 })
