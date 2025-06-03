@@ -1011,7 +1011,7 @@ const history =asyncHandler(async(req,res) => {
     })
     const data = user
     console.log(`watch history data  : ${data.watchHistory}`)
-    res.status(200).json(new ApiResponse(200,data.watchHistory))
+    res.status(200).json(new ApiResponse(200,data.watchHistory.flat()))
     // return res.status(200).json(new ApiResponse(200,user))
 })
 
