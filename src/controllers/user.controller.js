@@ -12,6 +12,7 @@ import { extractPublicId } from 'cloudinary-build-url'
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 import { env } from "process";
 import { generateMailToken ,mailConfig} from "../utils/mail.js";
+import { populate } from "dotenv";
 // ✅ REGISTER USER
 const registerUser = asyncHandler(async (req, res) => {
     const { fullName, email, username, password } = req.body;
@@ -1002,7 +1003,12 @@ const history =asyncHandler(async(req,res) => {
     // const user = await User.findOne({accessToken : token})
     const user =  await User.findOne({accessToken: token}).select(`watchHistory`).populate({
         path:`watchHistory.videoId`,
-        select: 'videoTitle thumbnail timestamps'})
+        select: 'videoTitle thumbnail timestamps owner',
+        populate:{
+            path: "owner",
+            populate: "username"
+        }   
+    })
     const data = user
     console.log(`watch history data  : ${data}`)
     res.status(200).json(new ApiResponse(200,user))
