@@ -64,7 +64,7 @@ const userSchema = new Schema({
     watchHistory: [{
         videoId:{
         type: Schema.Types.ObjectId,
-        ref: "video",
+        ref: "Video",
     }
     }],
     saved: [{
