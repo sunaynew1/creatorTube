@@ -25,6 +25,7 @@ console.log("reached here watch history")
     data.forEach(v => {
         const videoId = v.videoId 
         const card = document.createElement("div");
+         card.id=v.videoId
         card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
 
         card.innerHTML = `
@@ -32,11 +33,16 @@ console.log("reached here watch history")
             <div class="p-4">
             <h3 class="text-lg font-semibold text-white line-clamp-2">${videoId.videoTitle}</h3>
             <p class="text-sm text-zinc-400">${videoId.owner.username}</p>
-            <p class="text-xs text-zinc-500">Durations:${(videoId.duration)}</p>
+            <p class="text-xs text-zinc-500">Durations:${(videoId.durationstr)}</p>
             </div>
         `;
         historyGrid.appendChild(card);
+        card.addEventListener("click" ,() => {
+            window.location.href=`/watchVideo?v=${videoId}`
+        })
         });
+        
+       
 
     // Sidebar toggle
     let isSidebarOpen = false;
