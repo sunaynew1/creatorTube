@@ -24,7 +24,8 @@ const videoSchema = new Schema({
       required: true
    },
    duration :{
-      type:String
+      type:String,
+      default:"0"
    },
 
    views: {
