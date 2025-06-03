@@ -30,7 +30,7 @@ console.log("reached here watch history")
         card.innerHTML = `
             <img src="${videoId.thumbnail}" alt="${videoId.title}" class="w-full h-48 object-cover" />
             <div class="p-4">
-            <h3 class="text-lg font-semibold text-white line-clamp-2">${videoId.videoIdTitle}</h3>
+            <h3 class="text-lg font-semibold text-white line-clamp-2">${videoId.videoTitle}</h3>
             <p class="text-sm text-zinc-400">${videoId.owner.username}</p>
             <p class="text-xs text-zinc-500">${videoId.time}</p>
             </div>

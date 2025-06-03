@@ -460,11 +460,13 @@ const uploadVideo = asyncHandler(async (req, res) => {
 
     let videoFileURL, thumbnailURL;
     let videoPublicId, thumbnailPublicId;
+    let duration;
     try {
         videoFileURL = await uploadOnCloudinary(videoLocalPath, user._id)
         thumbnailURL = await uploadOnCloudinary(thumbnailLocalPath, user._id)
         videoPublicId = extractPublicId(videoFileURL.url)
         thumbnailPublicId = extractPublicId(thumbnailURL.url)
+        duration = videoFileURL.Duration
     } catch (error) {
         console.log(error)
         return res.status(400).json(new ApiResponse(400, "Video Upload failed"))
@@ -475,6 +477,7 @@ const uploadVideo = asyncHandler(async (req, res) => {
             videoPublicId,
             thumbnailPublicId,
             videoTitle,
+            duration,
             description,
             videoFile: videoFileURL.url,
             thumbnail: thumbnailURL.url,
