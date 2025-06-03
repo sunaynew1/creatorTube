@@ -467,7 +467,7 @@ const uploadVideo = asyncHandler(async (req, res) => {
         videoPublicId = extractPublicId(videoFileURL.url)
         thumbnailPublicId = extractPublicId(thumbnailURL.url)
         duration = videoFileURL.Duration
-        console.log(`duration of the video : ${duration}`)
+        console.log(`duration of the video : ${typeof(duration)}`)
     } catch (error) {
         console.log(error)
         return res.status(400).json(new ApiResponse(400, "Video Upload failed"))
