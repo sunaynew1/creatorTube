@@ -1010,7 +1010,7 @@ const history =asyncHandler(async(req,res) => {
         }   
     })
     const data = user
-    console.log(`watch history data  : ${data.watchHistory.videoId}`)
+    console.log(`watch history data  : ${data.watchHistory}`)
     res.status(200).json(new ApiResponse(200,user))
     // return res.status(200).json(new ApiResponse(200,user))
 })
