@@ -32,7 +32,7 @@ console.log("reached here watch history")
             <div class="p-4">
             <h3 class="text-lg font-semibold text-white line-clamp-2">${videoId.videoTitle}</h3>
             <p class="text-sm text-zinc-400">${videoId.owner.username}</p>
-            <p class="text-xs text-zinc-500">${(videoId.duration).floor()}</p>
+            <p class="text-xs text-zinc-500">Durations:${(videoId.duration)}</p>
             </div>
         `;
         historyGrid.appendChild(card);
