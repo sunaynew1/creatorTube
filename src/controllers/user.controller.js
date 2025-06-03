@@ -466,7 +466,7 @@ const uploadVideo = asyncHandler(async (req, res) => {
         thumbnailURL = await uploadOnCloudinary(thumbnailLocalPath, user._id)
         videoPublicId = extractPublicId(videoFileURL.url)
         thumbnailPublicId = extractPublicId(thumbnailURL.url)
-        duration = videoFileURL.duration.floor()
+        duration = Math.floor(videoFileURL.duration)
         console.log(`duration of the video : ${typeof(duration)}`)
     } catch (error) {
         console.log(error)
