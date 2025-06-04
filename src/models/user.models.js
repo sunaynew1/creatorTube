@@ -66,7 +66,7 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Video",
         },
-        timestamps:true
+        visitedAt: new Date()
     
 }],
     saved: [{
