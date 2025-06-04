@@ -65,8 +65,10 @@ const userSchema = new Schema({
         videoId:{
         type: Schema.Types.ObjectId,
         ref: "Video",
-    }
-    }],
+        },
+        timestamps:true
+    
+}],
     saved: [{
         videoId:{
         type: Schema.Types.ObjectId,
