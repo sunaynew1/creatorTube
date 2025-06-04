@@ -290,6 +290,9 @@ async function videoData() {
   videoTitlex.textContent =` ${data.data.videoTitle.slice(0,88)}...`
    }
 
+   if(data.data.description.length>150){
+  videoDescription.textContent =` ${data.data.videoTitle.slice(0,150)}...`
+   }
    
     channelName.textContent = data.data.owner.username
     channelSubscribers.textContent = data.data.subscriberCount
