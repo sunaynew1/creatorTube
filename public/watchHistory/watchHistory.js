@@ -37,6 +37,7 @@ console.log("reached here watch history")
   day: 'numeric',
   hour: '2-digit',
   minute: '2-digit',
+  second: '2-digit',
   hour12: true // Optional: Use 12-hour format (AM/PM)
 });
 
