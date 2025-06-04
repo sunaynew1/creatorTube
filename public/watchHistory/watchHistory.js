@@ -22,8 +22,24 @@ console.log("reached here watch history")
         const response=  await watchHistory()
         const data = response.data
         console.log(`watch history data frontend s: ${data}`)
+
+
     data.forEach(v => {
         const videoId = v.videoId 
+
+        const timeUTC = videoId.visitedAt
+        const date = new Date(timeUTC)
+        
+        const istTime = date.toLocaleString("en-IN", {
+  timeZone: "Asia/Kolkata",
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: true // Optional: Use 12-hour format (AM/PM)
+});
+
         const card = document.createElement("div");
         let title; 
         if(videoId.videoTitle.length>40){
@@ -43,6 +59,7 @@ console.log("reached here watch history")
             <h3 class="text-lg font-semibold text-white line-clamp-2">${title}</h3>
             <p class="text-sm text-zinc-400">${videoId.owner.username}</p>
             <p class="text-xs text-zinc-500">Durations:${(videoId.durationstr)}</p>
+            <p class="text-xs text-zinc-500">Visited At: ${istTime}</p>
             </div>
         `;
         historyGrid.appendChild(card);
