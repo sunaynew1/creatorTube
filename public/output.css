@@ -1143,6 +1143,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-\[\#2a2a2a\] {
   --tw-border-opacity: 1;
   border-color: rgb(42 42 42 / var(--tw-border-opacity, 1));
@@ -1360,6 +1364,10 @@ video {
 
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-none {
+  background-image: none;
 }
 
 .from-\[\#1f1f1f\] {

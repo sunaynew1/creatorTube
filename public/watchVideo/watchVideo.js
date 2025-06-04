@@ -291,7 +291,10 @@ async function videoData() {
    }
 
    if(data.data.description.length>150){
+
+    
   videoDescription.textContent =` ${ data.data.description.slice(0,150)}...`
+   desc.appendChild(videoDescription)
    }
    
     channelName.textContent = data.data.owner.username
