@@ -28,6 +28,7 @@ console.log("reached here watch history")
         const videoId = v.videoId 
 
         const timeUTC = v.visitedAt
+        console.log(timeUTC)
         const date = new Date(timeUTC)
         
         const istTime = date.toLocaleString("en-IN", {
@@ -40,7 +41,7 @@ console.log("reached here watch history")
   second: '2-digit',
   hour12: true // Optional: Use 12-hour format (AM/PM)
 });
-
+console.log(istTime)
         const card = document.createElement("div");
         let title; 
         if(videoId.videoTitle.length>40){
