@@ -27,7 +27,7 @@ console.log("reached here watch history")
     data.forEach(v => {
         const videoId = v.videoId 
 
-        const timeUTC = videoId.visitedAt
+        const timeUTC = v.visitedAt
         const date = new Date(timeUTC)
         
         const istTime = date.toLocaleString("en-IN", {
