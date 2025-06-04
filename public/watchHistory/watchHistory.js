@@ -25,8 +25,12 @@ console.log("reached here watch history")
     data.forEach(v => {
         const videoId = v.videoId 
         const card = document.createElement("div");
-       
+        let title; 
+        if(videoId.title.length>40){
+          title = `${videoId.title.slice(0,40)}...`
+        }
         
+
 
          card.id=videoId._id
         card.className = "rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg shadow-lg hover:ring-1 hover:ring-purple-500 transition-all";
@@ -34,7 +38,7 @@ console.log("reached here watch history")
         card.innerHTML = `
             <img src="${videoId.thumbnail}" alt="${videoId.title}" class="w-full h-48 object-cover" />
             <div class="p-4">
-            <h3 class="text-lg font-semibold text-white line-clamp-2">${videoId.videoTitle}</h3>
+            <h3 class="text-lg font-semibold text-white line-clamp-2">${title}</h3>
             <p class="text-sm text-zinc-400">${videoId.owner.username}</p>
             <p class="text-xs text-zinc-500">Durations:${(videoId.durationstr)}</p>
             </div>
