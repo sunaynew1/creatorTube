@@ -295,10 +295,16 @@ async function videoData() {
    
     
   videoDescription.textContent =` ${ data.data.description.slice(0,150)}...`
+  const parentContainer = document.getElementById("desc-container")
   const container =  document.createElement("div") 
-    const link = document.createElement("a")      
+    const link = document.createElement("a")
+    link.addEventListener("click" , () => {
+       videoDescription.textContent =` ${ data.data.description}`
+         
+      })      
   container.appendChild(link)
-   videoDescription.appendChild(container)
+  videoDescription.appendChild(videoDescription)
+   parentContainer.appendChild(videoDescription)
    }
    
     channelName.textContent = data.data.owner.username
