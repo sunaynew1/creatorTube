@@ -300,7 +300,7 @@ async function videoData() {
     const link = document.createElement("a")
     link.textContent="See More" 
     link.addEventListener("click" , () => {
-      videoDescription.classList.add("break-words whitespace-pre-wrap")
+      // videoDescription.classList.add("break-words whitespace-pre-wrap")
        videoDescription.textContent =` ${ data.data.description}`
        
          
