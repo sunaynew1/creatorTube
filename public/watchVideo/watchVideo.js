@@ -298,8 +298,10 @@ async function videoData() {
   const parentContainer = document.getElementById("desc-container")
   const container =  document.createElement("div") 
     const link = document.createElement("a")
+    link.textContent="See More" 
     link.addEventListener("click" , () => {
        videoDescription.textContent =` ${ data.data.description}`
+       videoDescription.classList.add("break-words whitespace-pre-wrap")
          
       })      
   container.appendChild(link)
