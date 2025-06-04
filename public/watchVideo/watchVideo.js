@@ -297,7 +297,7 @@ async function videoData() {
     channelName.textContent = data.data.owner.username
     channelSubscribers.textContent = data.data.subscriberCount
     likeCount.textContent = data.data.likesCount
-    videoDescription.textContent = data.data.description
+    
     channelImage.src = data.data.owner.avatar
     userAvatar.src = UserData.data.avatar
     likeCount.textContent = data.data.likesCount
