@@ -26,8 +26,8 @@ console.log("reached here watch history")
         const videoId = v.videoId 
         const card = document.createElement("div");
         let title; 
-        if(videoId.title.length>40){
-          title = `${videoId.title.slice(0,40)}...`
+        if(videoId.videoTitle.length>40){
+          title = `${videoId.videoTitle.slice(0,40)}...`
         }
         
 
