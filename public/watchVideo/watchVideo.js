@@ -303,7 +303,7 @@ async function videoData() {
          
       })      
   container.appendChild(link)
-  videoDescription.appendChild(videoDescription)
+  videoDescription.appendChild(container)
    parentContainer.appendChild(videoDescription)
    }
    
