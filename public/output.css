@@ -698,6 +698,10 @@ video {
   margin-bottom: 2rem;
 }
 
+.mb-\[5px\] {
+  margin-bottom: 5px;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -732,18 +736,6 @@ video {
 
 .mt-\[50px\] {
   margin-top: 50px;
-}
-
-.mb-\[\] {
-  margin-bottom: ;
-}
-
-.mb-\[5\] {
-  margin-bottom: 5;
-}
-
-.mb-\[5px\] {
-  margin-bottom: 5px;
 }
 
 .line-clamp-2 {

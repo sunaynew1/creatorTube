@@ -291,7 +291,7 @@ async function videoData() {
    }
 
    if(data.data.description.length>150){
-  videoDescription.textContent =` ${data.data.videoTitle.slice(0,150)}...`
+  videoDescription.textContent =` ${ data.data.description.slice(0,150)}...`
    }
    
     channelName.textContent = data.data.owner.username
