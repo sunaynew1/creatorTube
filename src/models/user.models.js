@@ -65,8 +65,9 @@ const userSchema = new Schema({
         videoId:{
         type: Schema.Types.ObjectId,
         ref: "Video",
-         visitedAt: { type: Date, default: Date.now }
+        
         },
+         visitedAt: { type: Date, default: Date.now }
         
     
 }],
