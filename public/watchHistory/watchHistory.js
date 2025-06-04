@@ -28,6 +28,8 @@ console.log("reached here watch history")
         let title; 
         if(videoId.videoTitle.length>40){
           title = `${videoId.videoTitle.slice(0,40)}...`
+        }else{
+            title= videoId.videoTitle
         }
         
 
