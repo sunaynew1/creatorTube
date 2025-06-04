@@ -291,7 +291,8 @@ async function videoData() {
    }
 
    if(data.data.description.length>150){
-
+   const desc= document.createElement("div")
+   
     
   videoDescription.textContent =` ${ data.data.description.slice(0,150)}...`
    desc.appendChild(videoDescription)
