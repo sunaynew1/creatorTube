@@ -286,9 +286,11 @@ async function videoData() {
     const formatted = date.toLocaleString('en-US', options);
     console.log(formatted);
  
-   
+   if(data.data.videoTitle.length>88){
+  videoTitlex.textContent =` ${data.data.videoTitle.slice(0,88)}...`
+   }
 
-    videoTitlex.textContent = data.data.videoTitle
+   
     channelName.textContent = data.data.owner.username
     channelSubscribers.textContent = data.data.subscriberCount
     likeCount.textContent = data.data.likesCount
