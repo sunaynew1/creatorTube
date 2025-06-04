@@ -1018,7 +1018,7 @@ const history =asyncHandler(async(req,res) => {
     // const user = await User.findOne({accessToken : token})
     const user =  await User.findOne({accessToken: token}).select(`watchHistory`).populate({
         path:`watchHistory.videoId`,
-        select: 'videoTitle thumbnail timestamps owner duration',
+        select: 'videoTitle thumbnail timestamps owner durationstr',
         populate:{
             path: "owner",
             select: "username"
