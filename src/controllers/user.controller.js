@@ -30,7 +30,7 @@ const registerUser = asyncHandler(async (req, res) => {
     // ✅ Fixed: check avatar existence properly and error out if missing
     const avatarLocalPath = req.files?.avatar?.[0]?.path;
     if (!avatarLocalPath) {
-        throw new ApiError(400, "Avatar is required");
+        return res.status(400).json(new ApiResponse(400,"Avatar required",false))
     }
 
 
@@ -51,16 +51,19 @@ const registerUser = asyncHandler(async (req, res) => {
     try {
         // ✅ Cleaned Cloudinary upload logic
         avatar = await uploadOnCloudinary(avatarLocalPath, user._id);
+
         if (req.files.coverImage?.[0]?.path) {
             const coverLocalPath = req.files.coverImage[0].path;
             coverImage = await uploadOnCloudinary(coverLocalPath, user._id);
+        }else{
+             return res.status(400).json(new ApiResponse(400,"Cover Image required",false))
         }
     } catch (error) {
         throw new ApiError(500, "Error uploading images");
     }
 
-    user.coverImage = coverImage.url
-    user.avatar = avatar.url
+    user.coverImage = coverImage?.url || ""
+    user.avatar = avatar?.url || ""
     user.save({ validateBeforeSave: false })
 
     return res.status(201).json(new ApiResponse(201, createdUser, "User Registered Successfully"));
