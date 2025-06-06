@@ -28,9 +28,10 @@ dotenv.config()
         )
 
      
-        console.log("FIle is uploaded on Cloudinary. File src:" , response.url)
+        console.log("FIle is uploaded on Cloudinary. File src:" , response)
         //once the file is uploaded we would like to delete it from our server 
         fs.unlinkSync(localFilepath)
+       
         return response;
 
     }catch(error){
