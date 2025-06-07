@@ -40,7 +40,7 @@ const password=document.getElementById("password").value
     console.log(`email: ${email} username : ${username}  password : ${password}`)
     
     try{
-        const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/login",{
+        const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/login",{
             method:"POST",
             headers: {
                 "Content-Type" : "application/json"
