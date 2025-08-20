@@ -431,6 +431,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
 
 const dashboard = asyncHandler(async (req, res) => {
     const token = req.cookies.accessToken
+    console.log(token)
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     const user = await User.findOne({ _id: decoded._id });
 
