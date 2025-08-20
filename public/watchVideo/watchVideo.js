@@ -313,7 +313,7 @@ async function videoData() {
   videoDescription.appendChild(container)
    parentContainer.appendChild(videoDescription)
    }else{
-     videoDescription= data.data.description
+     videoDescription.textContent= data.data.description
    }
    
     channelName.textContent = data.data.owner.username
