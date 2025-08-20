@@ -34,7 +34,7 @@ Thank you for signing up on our platform!
 
 To complete your registration, please verify your email address by clicking the link below:
 
-http://creatortube-production.up.railway.app/newPassword?token=${token}
+http://creator-tube-three.vercel.app/newPassword?token=${token}
 
 If you did not make this request, you can safely ignore this email.
 

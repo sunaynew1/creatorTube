@@ -46,7 +46,7 @@ document.getElementById("btn-upload").addEventListener("click", async () => {
     formData.append("thumbnail", thumbnail);
     const xhr = new XMLHttpRequest();
 
-    // xhr.open("POST", "https://creatortube-production.up.railway.app/api/v1/users/upload-video");
+    // xhr.open("POST", "https://creator-tube-three.vercel.app/api/v1/users/upload-video");
   
     // // Include cookies
     // xhr.withCredentials = true;
@@ -77,7 +77,7 @@ document.getElementById("btn-upload").addEventListener("click", async () => {
   
     try {
       showNotification("Video started uploading 🚀🚀");
-      const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/upload-video", {
+      const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/upload-video", {
         method: "POST",
         body: formData,
         credentials: "include" // to include cookies

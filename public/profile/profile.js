@@ -7,7 +7,7 @@ const saveAbout = document.getElementById('saveAboutMe');
 
 
 async function forgotPassword(mailId) {
-    const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/Mail",{
+    const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/Mail",{
         method:"POST",
         headers: {
             "Content-Type" : "application/json"
@@ -62,7 +62,7 @@ togglePassBtn.addEventListener('click', () => {
 
 
 async function fetchData() {
-    const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/allData", {
+    const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/allData", {
         method: "POST",
         headers: {
             "Content-Type": "applications/json"
@@ -75,7 +75,7 @@ async function fetchData() {
 
 async function postAboutMe(aboutMe) {
     try {
-        const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/postAboutMe", {
+        const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/postAboutMe", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -92,7 +92,7 @@ async function postAboutMe(aboutMe) {
 
 async function changeCurrentPassword(oldPassword, newPassword) {
     try {
-        const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/change-password", {
+        const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/change-password", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

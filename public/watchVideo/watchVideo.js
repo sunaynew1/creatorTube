@@ -118,7 +118,7 @@ function createCommentElement(name, text, useravatar) {
 }
 
 async function registerView() {
-  const registerView = await fetch("https://creatortube-production.up.railway.app/api/v1/users/views", {
+  const registerView = await fetch("https://creator-tube-three.vercel.app/api/v1/users/views", {
 
     method: "POST",
     headers: {
@@ -131,7 +131,7 @@ async function registerView() {
 }
   async function saveVideo(videoId) {
    try{
-      const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/saveVideo", {
+      const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/saveVideo", {
         method : "POST",
         headers:{
           "Content-Type" : "application/json"
@@ -163,7 +163,7 @@ async function videoData() {
     const subscribeButton = document.getElementById("btn-subscribe")
     const view = document.getElementById("views-textbox")
 
-    const reqvideoData = await fetch("https://creatortube-production.up.railway.app/api/v1/users/videoData", {
+    const reqvideoData = await fetch("https://creator-tube-three.vercel.app/api/v1/users/videoData", {
 
       method: "POST",
       headers: {
@@ -176,7 +176,7 @@ async function videoData() {
 
   
 
-    const reqUserData = await fetch("https://creatortube-production.up.railway.app/api/v1/users/userInfo", {
+    const reqUserData = await fetch("https://creator-tube-three.vercel.app/api/v1/users/userInfo", {
 
       method: "POST",
       headers: {
@@ -186,7 +186,7 @@ async function videoData() {
     })
 
     async function newComment(videoId, comment) {
-      const resNewComment = await fetch("https://creatortube-production.up.railway.app/api/v1/users/comment", {
+      const resNewComment = await fetch("https://creator-tube-three.vercel.app/api/v1/users/comment", {
 
         method: "POST",
         headers: {
@@ -198,7 +198,7 @@ async function videoData() {
     }
 
     async function like(videoId) {
-      let reqLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/like", {
+      let reqLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/like", {
 
         method: "POST",
         headers: {
@@ -214,7 +214,7 @@ async function videoData() {
     }
 
     async function subscriberCheck(channelId) {
-      let reqLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/subscribeCheck", {
+      let reqLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/subscribeCheck", {
 
         method: "POST",
         headers: {
@@ -232,7 +232,7 @@ async function videoData() {
     async function subscribe() {
       const subscribedTo = data.data.owner._id
       console.log(` chaneel  ${subscribedTo}`)
-      let reqLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/subscribe", {
+      let reqLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/subscribe", {
 
         method: "POST",
         headers: {
@@ -247,7 +247,7 @@ async function videoData() {
       return x
     }
     async function dislike(videoId) {
-      let reqDisLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/dislike", {
+      let reqDisLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/dislike", {
 
         method: "POST",
         headers: {

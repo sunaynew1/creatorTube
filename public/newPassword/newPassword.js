@@ -3,7 +3,7 @@ const token = params.get('token')
 
 async function fetchData(newPassword){
     
-    const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/newPw",{
+    const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/newPw",{
         method: "POST",
         headers : {
             "Content-Type" : "application/json"
