@@ -1,6 +1,7 @@
 
 const params = new URLSearchParams(window.location.search);
 const channelId = params.get('v')
+console.log(channelId)
 
 
 async function fetchDetails() {
