@@ -1,5 +1,5 @@
   async function userData(){
-    const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/onlyId", {
+    const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/onlyId", {
         method : "POST",
         headers: {
             "Content-Type" : "application/json"
@@ -12,7 +12,7 @@
   }
  
   async function logout(){
-    const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/logout", {
+    const req = await fetch("https://creatortube-production.up.railway.app/api/v1/users/logout", {
         method : "POST",
         headers: {
             "Content-Type" : "application/json"

@@ -12,7 +12,7 @@ const app = express();
 
 const allowedOrigins = [
   "https://creator-tube-todos-projects-0a36388c.vercel.app",
-  "https://creator-tube-three.vercel.app",
+  "https://creatortube-production.up.railway.app",
   "http://localhost:3004"
 
 ];
