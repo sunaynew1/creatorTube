@@ -1,6 +1,6 @@
 async function userData() {
   try {
-    const res = await fetch("https://creator-tube-three.vercel.app/api/v1/users/dashboard", {
+    const res = await fetch("https://creatortube-production.up.railway.app/api/v1/users/dashboard", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
