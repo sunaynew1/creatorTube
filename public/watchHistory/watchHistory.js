@@ -1,7 +1,7 @@
 console.log("dsdsgsdfsdfdf")
 async function watchHistory() {
   try {
-    const res = await fetch("https://creator-tube-three.vercel.app/api/v1/users/history", {
+    const res = await fetch("https://creatortube-production.up.railway.app/api/v1/users/history", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
