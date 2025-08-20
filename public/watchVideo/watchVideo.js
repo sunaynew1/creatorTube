@@ -148,7 +148,7 @@ async function registerView() {
 }
 
 async function videoData() {
-  try {
+  try { 
     const videoTitlex = document.getElementById("videoTitle")
     const channelName = document.getElementById("channelName")
     const channelSubscribers = document.getElementById("channelSubscribers")

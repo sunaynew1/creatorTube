@@ -19,7 +19,7 @@ const errorHandler =(err,req,res,next) =>{
             ...process.env.NODE_ENV === "production" ? {
                 stack: error.stack} :{} 
             }
-            return res.status(error.statusCode).json(new ApiResponse(error.statusCode,response))
+            return res.status(error.statusCode).json(new ApiResponse(error.statusCode,response,"failed"))
     }
         }
         
