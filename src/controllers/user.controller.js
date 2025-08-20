@@ -853,7 +853,7 @@ await Video.deleteOne({ _id: videoLibData._id });
 })
 
 const myPage = asyncHandler(async(req,res)=> {
- const channelId = req.body.channelId
+ const channelId ="68a62f12b67b3d853451329f"
  console.log(channelId)
  const user = await User.findById(channelId).select("username subscriber avatar coverImage subscriberCount myVideos fullName _id").populate("myVideos.videoId")
  return res.status(200).json(new ApiResponse(200,user,"success"))
