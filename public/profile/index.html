@@ -213,22 +213,7 @@
     </section>
 
   </main>
-<script>
-    let isSidebarOpen = false;
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('sidebarToggle');
-
-    toggleBtn.addEventListener('click', () => {
-      isSidebarOpen = !isSidebarOpen;
-      sidebar.classList.toggle('-translate-x-full');
-      toggleBtn.innerHTML = isSidebarOpen
-        ? '<i data-lucide="x" class="w-5 h-5"></i>'
-        : '<i data-lucide="menu" class="w-5 h-5"></i>';
-      lucide.createIcons();
-    });
-
-    lucide.createIcons();
-  </script>
+  
 </body>
 <script src="nav.js"></script>
 <script src="/profile/profile.js"></script>
