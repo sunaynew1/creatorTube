@@ -288,6 +288,8 @@ async function videoData() {
  
    if(data.data.videoTitle.length>88){
   videoTitlex.textContent =` ${data.data.videoTitle.slice(0,88)}...`
+   }else{
+     videoTitlex.textContent =data.data.videoTitle
    }
 
    if(data.data.description.length>150){
@@ -302,6 +304,7 @@ async function videoData() {
     link.style.cursor="pointer"
     link.addEventListener("click" , () => {
       // videoDescription.classList.add("break-words whitespace-pre-wrap")
+      console.log(data.data.description)
        videoDescription.textContent =` ${ data.data.description}`
        
          
@@ -309,6 +312,8 @@ async function videoData() {
   container.appendChild(link)
   videoDescription.appendChild(container)
    parentContainer.appendChild(videoDescription)
+   }else{
+     videoDescription= data.data.description
    }
    
     channelName.textContent = data.data.owner.username
