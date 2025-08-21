@@ -26,7 +26,7 @@ async function fetchDetails() {
     return { data: { myVideos: [] } }; // fallback
   }
 }
-fetchDetails()
+
 
     async function subscribe (){
       const subscribedTo = data.data.owner._id
@@ -185,7 +185,7 @@ console.log(d)
       </div>
     `;
     card.addEventListener("click" , () => {
-        window.location.href = `watchVideo.html?v=${video.videoId._id}`
+        window.location.href = `watchVideo?v=${video.videoId._id}`
     })
     videoGrid.appendChild(card);
   })
