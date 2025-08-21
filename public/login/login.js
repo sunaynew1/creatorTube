@@ -55,7 +55,7 @@ const password=document.getElementById("password").value
           console.log(document.cookie)
           if (req.ok) {
   showNotification(data.message || "Logged in successfully", false); // ✅ success = false
-  // window.location.href = "/dashboard";
+  window.location.href = "/dashboard";
 } else {
   showNotification(data.message || "Login failed", true); // ✅ error = true
 }
