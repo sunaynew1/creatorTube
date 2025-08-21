@@ -31,7 +31,7 @@ fetchDetails()
     async function subscribe (){
       const subscribedTo = data.data.owner._id
       console.log(` chaneel  ${subscribedTo}`)
-      let reqLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/subscribe", {
+      let reqLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/subscribe", {
 
         method: "POST",
         headers: {
@@ -69,7 +69,7 @@ fetchDetails()
 async function subscribe(subscribedTo) {
       // const subscribedTo = data.data.owner._id
       console.log(` chaneel  ${subscribedTo}`)
-      let reqLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/subscribe", {
+      let reqLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/subscribe", {
 
         method: "POST",
         headers: {
@@ -84,7 +84,7 @@ async function subscribe(subscribedTo) {
       return x
     }
    async function subscriberCheck(channelId) {
-      let reqLike = await fetch("https://creator-tube-three.vercel.app/api/v1/users/subscribeCheck", {
+      let reqLike = await fetch("https://creatortube-production.up.railway.app/api/v1/users/subscribeCheck", {
 
         method: "POST",
         headers: {
