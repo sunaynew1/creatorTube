@@ -81,10 +81,10 @@
 
     }
 
-    // function closeEditModal() {
-    //   document.getElementById('editModal').classList.add('hidden');
-    //   currentEditId = null;
-    // }
+    function closeEditModal() {
+      document.getElementById('editModal').classList.add('hidden');
+      currentEditId = null;
+    }
 
     document.getElementById("btn-save").addEventListener("click" , () => {
       saveEdit()
