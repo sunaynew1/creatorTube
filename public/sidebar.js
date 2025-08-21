@@ -60,7 +60,7 @@
     });
       profilediv.style.cursor="pointer"
      profilediv.addEventListener("click" , () => {
-      window.location.href = "profile.html";
+      window.location.href = "/profile";
      })
     lucide.createIcons();
 

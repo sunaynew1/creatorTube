@@ -49,7 +49,7 @@ window.onload = async () => {
     if (avatar) {
       avatar.src = data.data.avatar;
       avatar.addEventListener("click", () => {
-        window.location.href = "profile.html";
+        window.location.href = "/profile";
       });
     } else {
       console.warn("Avatar element not found.");
