@@ -73,18 +73,18 @@ document.addEventListener("DOMContentLoaded", working);
 //       throw new Error("User ID missing in dashboard data");
 //     }
 
-//     const userId = data.data._id;
+    const userId = data.data._id;
 
-//     // ✅ Set avatar
-//     const avatar = document.getElementById("avatar");
-//     if (avatar) {
-//       avatar.src = data.data.avatar;
-//       avatar.addEventListener("click", () => {
-//         window.location.href = "profile.html";
-//       });
-//     } else {
-//       console.warn("Avatar element not found.");
-//     }
+    // ✅ Set avatar
+    const avatar = document.getElementById("avatar");
+    if (avatar) {
+      avatar.src = data.data.avatar;
+      avatar.addEventListener("click", () => {
+        window.location.href = "/profile";
+      });
+    } else {
+      console.warn("Avatar element not found.");
+    }
 
 //     // ✅ Set channel link
 //     // const channelBtn = document.getElementById("mychannel");
