@@ -7,7 +7,7 @@ console.log(channelId)
 async function fetchDetails() {
   try {
     const req = await fetch("https://creator-tube-three.vercel.app/api/v1/users/myPage", {
-      method: "GET",
+      method: "POST",
       headers: { "Content-Type": "application/json" },
        body: JSON.stringify({channelId})
 
