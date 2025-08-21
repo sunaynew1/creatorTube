@@ -97,7 +97,7 @@ router.route("/register").post(
     router.route("/deleteVideo").post(verifyJWT,deleteVideo)
      router.route("/postAboutMe").post(verifyJWT,postAboutMe)
     router.route("/allData").post(verifyJWT,allData)
-    router.route("/myPage").post(verifyJWT,myPage)
+    router.route("/myPage").get(verifyJWT,myPage)
     router.route("/editVideo").post(verifyJWT,editVideo)
      router.route("/myVideos").post(verifyJWT,myVideos)
     router.route("/subscribe").post(verifyJWT,subscribe)
