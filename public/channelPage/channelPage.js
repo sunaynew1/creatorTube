@@ -19,6 +19,7 @@ async function fetchDetails() {
     }
 
     const data = await req.json();
+    console.log(data)
     return data;
   } catch (err) {
     console.error("Fetch failed:", err);
